@@ -12,44 +12,52 @@ namespace WindowsFormsApp1
 {
     public partial class EnumEditor : Form
     {
-        public EnumEditor()
+        Homepage hmpForm;
+        public EnumEditor(Homepage form)
         {
+            this.hmpForm = form;
             InitializeComponent();
         }
 
         private void userInfoBtn_Click(object sender, EventArgs e)
         {
-            Account form = new Account();
+            Account form = new Account(hmpForm);
             form.Show();
             this.Hide();
         }
 
         private void contractListBtn_Click(object sender, EventArgs e)
         {
-            ContractList form = new ContractList();
+            ContractList form = new ContractList(hmpForm);
             form.Show();
             this.Hide();
         }
 
         private void carListBtn_Click(object sender, EventArgs e)
         {
-            CarList form = new CarList();
+            CarList form = new CarList(hmpForm);
             form.Show();
             this.Hide();
         }
 
         private void KlientListBtn_Click(object sender, EventArgs e)
         {
-            KlientList form = new KlientList();
+            KlientList form = new KlientList(hmpForm);
             form.Show();
             this.Hide();
         }
 
         private void workerListBtn_Click(object sender, EventArgs e)
         {
-            WorkerList form = new WorkerList();
+            WorkerList form = new WorkerList(hmpForm);
             form.Show();
             this.Hide();
+        }
+
+        private void logoutBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            hmpForm.Show();
         }
     }
 }

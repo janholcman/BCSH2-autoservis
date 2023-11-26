@@ -48,7 +48,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -72,6 +74,12 @@
     </Compile>
     <Compile Include="Backend\EnumEditor.Designer.cs">
       <DependentUpon>EnumEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backend\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backend\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Backend\Homepage.cs">
       <SubType>Form</SubType>
@@ -136,6 +144,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Backend\KlientList.resx">
       <DependentUpon>KlientList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backend\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

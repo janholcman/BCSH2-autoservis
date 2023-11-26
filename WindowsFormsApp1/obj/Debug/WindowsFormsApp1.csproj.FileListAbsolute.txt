@@ -16,3 +16,4 @@ C:\Users\honza\Source\Repos\janholcman\autoservis\WindowsFormsApp1\obj\Debug\Win
 C:\Users\honza\Source\Repos\janholcman\autoservis\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
 C:\Users\honza\Source\Repos\janholcman\autoservis\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 C:\Users\honza\Source\Repos\janholcman\autoservis\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\honza\Source\Repos\janholcman\autoservis\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Backend.LoginForm.resources
