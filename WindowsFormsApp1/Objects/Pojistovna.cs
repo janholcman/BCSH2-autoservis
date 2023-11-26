@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 
 namespace GUI.Objects
 {
-    enum Pojistovna
+    internal class Pojistovna
     {
-        Allianz,
-        AXA,
-        Progressive,
-        Geico,
-        StateFarm,
-        SwissRe
+        int Id { get; set; }
+        String nazev {  get; set; }
+
+        public Pojistovna(int id, string nazev)
+        {
+            Id = id;
+            this.nazev = nazev;
+        }
     }
 }

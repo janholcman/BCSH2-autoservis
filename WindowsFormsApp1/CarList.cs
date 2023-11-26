@@ -10,23 +10,23 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Account : Form
+    public partial class CarList : Form
     {
-        public Account()
+        public CarList()
         {
             InitializeComponent();
+        }
+
+        private void userInfoBtn_Click(object sender, EventArgs e)
+        {
+            Account form = new Account();
+            form.Show();
+            this.Hide();
         }
 
         private void contractListBtn_Click(object sender, EventArgs e)
         {
             ContractList form = new ContractList();
-            form.Show();
-            this.Hide();
-        }
-
-        private void carListBtn_Click(object sender, EventArgs e)
-        {
-            CarList form = new CarList();
             form.Show();
             this.Hide();
         }

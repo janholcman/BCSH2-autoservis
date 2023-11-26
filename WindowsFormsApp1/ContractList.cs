@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Account : Form
+    public partial class ContractList : Form
     {
-        public Account()
+        public ContractList()
         {
             InitializeComponent();
         }
 
-        private void contractListBtn_Click(object sender, EventArgs e)
+        private void userInfoBtn_Click(object sender, EventArgs e)
         {
-            ContractList form = new ContractList();
+            Account form = new Account();
             form.Show();
             this.Hide();
         }

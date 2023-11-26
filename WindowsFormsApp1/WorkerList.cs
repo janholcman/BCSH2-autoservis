@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Account : Form
+    public partial class WorkerList : Form
     {
-        public Account()
+        public WorkerList()
         {
             InitializeComponent();
+        }
+
+        private void userInfoBtn_Click(object sender, EventArgs e)
+        {
+            Account form = new Account();
+            form.Show();
+            this.Hide();
         }
 
         private void contractListBtn_Click(object sender, EventArgs e)
@@ -34,13 +41,6 @@ namespace WindowsFormsApp1
         private void KlientListBtn_Click(object sender, EventArgs e)
         {
             KlientList form = new KlientList();
-            form.Show();
-            this.Hide();
-        }
-
-        private void workerListBtn_Click(object sender, EventArgs e)
-        {
-            WorkerList form = new WorkerList();
             form.Show();
             this.Hide();
         }

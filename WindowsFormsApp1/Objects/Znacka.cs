@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace GUI.Objects
 {
-    enum Znacka
+    internal class Znacka
     {
-        Peugeot,
-        Toyota,
-        Skoda,
-        Honda,
-        Hyundai,
-        Mercedes,
-        BMW,
-        Renault
+        int Id {  get; set; }
+        String nazev {  get; set; }
+
+        public Znacka(int id, string nazev)
+        {
+            Id = id;
+            this.nazev = nazev;
+        }
     }
 }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Form1 : Form
+    public partial class Homepage : Form
     {
-        public Form1()
+        public Homepage()
         {
             InitializeComponent();
         }
@@ -22,7 +22,7 @@ namespace WindowsFormsApp1
 
         }
 
-        private void login_Click(object sender, EventArgs e)
+        private void LoginBtn_Click(object sender, EventArgs e)
         {
             Account form = new Account();
             form.Show();

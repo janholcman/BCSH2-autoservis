@@ -52,17 +52,41 @@
     <Compile Include="Account.Designer.cs">
       <DependentUpon>Account.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="EnumEditor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="EnumEditor.Designer.cs">
+      <DependentUpon>EnumEditor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frontend\Homepage.cs">
+    <Compile Include="Homepage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frontend\Homepage.Designer.cs">
+    <Compile Include="Homepage.Designer.cs">
       <DependentUpon>Homepage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ContractList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ContractList.Designer.cs">
+      <DependentUpon>ContractList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CarList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CarList.Designer.cs">
+      <DependentUpon>CarList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WorkerList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WorkerList.Designer.cs">
+      <DependentUpon>WorkerList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KlientList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KlientList.Designer.cs">
+      <DependentUpon>KlientList.cs</DependentUpon>
     </Compile>
     <Compile Include="Objects\Adresa.cs" />
     <Compile Include="Objects\Automobil.cs" />
@@ -80,8 +104,23 @@
     <Compile Include="Objects\Znacka.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Frontend\Homepage.resx">
+    <EmbeddedResource Include="Account.resx">
+      <DependentUpon>Account.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CarList.resx">
+      <DependentUpon>CarList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnumEditor.resx">
+      <DependentUpon>EnumEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Homepage.resx">
       <DependentUpon>Homepage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContractList.resx">
+      <DependentUpon>ContractList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KlientList.resx">
+      <DependentUpon>KlientList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -92,6 +131,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="WorkerList.resx">
+      <DependentUpon>WorkerList.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -107,6 +149,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Backend\" />
+    <Folder Include="Frontend\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

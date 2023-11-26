@@ -6,11 +6,15 @@ using System.Threading.Tasks;
 
 namespace GUI.Objects
 {
-    enum Pozice
+    internal class Pozice
     {
-        Administrator,
-        Worker,
-        User,
-        Guest
+        int Id {  get; set; }
+        String nazev {  get; set; }
+
+        public Pozice(int id, string nazev)
+        {
+            Id = id;
+            this.nazev = nazev;
+        }
     }
 }
