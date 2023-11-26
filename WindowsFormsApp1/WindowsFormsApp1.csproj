@@ -12,6 +12,21 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -46,46 +61,46 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Account.cs">
+    <Compile Include="Backend\Account.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Account.Designer.cs">
+    <Compile Include="Backend\Account.Designer.cs">
       <DependentUpon>Account.cs</DependentUpon>
     </Compile>
-    <Compile Include="EnumEditor.cs">
+    <Compile Include="Backend\EnumEditor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EnumEditor.Designer.cs">
+    <Compile Include="Backend\EnumEditor.Designer.cs">
       <DependentUpon>EnumEditor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Homepage.cs">
+    <Compile Include="Backend\Homepage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Homepage.Designer.cs">
+    <Compile Include="Backend\Homepage.Designer.cs">
       <DependentUpon>Homepage.cs</DependentUpon>
     </Compile>
-    <Compile Include="ContractList.cs">
+    <Compile Include="Backend\ContractList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ContractList.Designer.cs">
+    <Compile Include="Backend\ContractList.Designer.cs">
       <DependentUpon>ContractList.cs</DependentUpon>
     </Compile>
-    <Compile Include="CarList.cs">
+    <Compile Include="Backend\CarList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CarList.Designer.cs">
+    <Compile Include="Backend\CarList.Designer.cs">
       <DependentUpon>CarList.cs</DependentUpon>
     </Compile>
-    <Compile Include="WorkerList.cs">
+    <Compile Include="Backend\WorkerList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WorkerList.Designer.cs">
+    <Compile Include="Backend\WorkerList.Designer.cs">
       <DependentUpon>WorkerList.cs</DependentUpon>
     </Compile>
-    <Compile Include="KlientList.cs">
+    <Compile Include="Backend\KlientList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="KlientList.Designer.cs">
+    <Compile Include="Backend\KlientList.Designer.cs">
       <DependentUpon>KlientList.cs</DependentUpon>
     </Compile>
     <Compile Include="Objects\Adresa.cs" />
@@ -104,22 +119,22 @@
     <Compile Include="Objects\Znacka.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Account.resx">
+    <EmbeddedResource Include="Backend\Account.resx">
       <DependentUpon>Account.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CarList.resx">
+    <EmbeddedResource Include="Backend\CarList.resx">
       <DependentUpon>CarList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EnumEditor.resx">
+    <EmbeddedResource Include="Backend\EnumEditor.resx">
       <DependentUpon>EnumEditor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Homepage.resx">
+    <EmbeddedResource Include="Backend\Homepage.resx">
       <DependentUpon>Homepage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ContractList.resx">
+    <EmbeddedResource Include="Backend\ContractList.resx">
       <DependentUpon>ContractList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="KlientList.resx">
+    <EmbeddedResource Include="Backend\KlientList.resx">
       <DependentUpon>KlientList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -131,7 +146,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="WorkerList.resx">
+    <EmbeddedResource Include="Backend\WorkerList.resx">
       <DependentUpon>WorkerList.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
@@ -148,8 +163,28 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Backend\" />
     <Folder Include="Frontend\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="databaze\Database1.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="databaze\Database1_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>Database1.mdf</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 a x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
