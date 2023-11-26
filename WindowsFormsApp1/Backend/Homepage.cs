@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.Backend;
 
 namespace WindowsFormsApp1
 {
@@ -24,9 +25,13 @@ namespace WindowsFormsApp1
 
         private void LoginBtn_Click(object sender, EventArgs e)
         {
-            Account form = new Account();
-            form.Show();
-            this.Hide();
+            using (LoginForm loginForm = new LoginForm(this))
+            {
+
+                loginForm.ShowDialog();
+
+
+            }
         }
     }
 }

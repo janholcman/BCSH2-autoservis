@@ -105,6 +105,7 @@
             this.logoutBtn.TabIndex = 7;
             this.logoutBtn.Text = "Odhlásit";
             this.logoutBtn.UseVisualStyleBackColor = true;
+            this.logoutBtn.Click += new System.EventHandler(this.logoutBtn_Click);
             // 
             // EnumEditor
             // 
@@ -119,6 +120,7 @@
             this.Controls.Add(this.userInfoBtn);
             this.Controls.Add(this.logoutBtn);
             this.Name = "EnumEditor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EnumEditor";
             this.ResumeLayout(false);
 

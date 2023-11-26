@@ -57,6 +57,7 @@
             this.logoutBtn.TabIndex = 0;
             this.logoutBtn.Text = "Odhlásit";
             this.logoutBtn.UseVisualStyleBackColor = true;
+            this.logoutBtn.Click += new System.EventHandler(this.logoutBtn_Click);
             // 
             // userInfoBtn
             // 
@@ -263,6 +264,7 @@
             this.Controls.Add(this.userInfoBtn);
             this.Controls.Add(this.logoutBtn);
             this.Name = "Account";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Accounts";
             this.ResumeLayout(false);
             this.PerformLayout();
