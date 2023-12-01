@@ -59,5 +59,12 @@ namespace WindowsFormsApp1
             this.Close();
             hmpForm.Show();
         }
+
+        private void KlientList_Load(object sender, EventArgs e)
+        {
+            // TODO: Tento řádek načte data do tabulky 'database1DataSet4.zakaznik'. Můžete jej přesunout nebo jej odstranit podle potřeby.
+            this.zakaznikTableAdapter.Fill(this.database1DataSet4.zakaznik);
+
+        }
     }
 }

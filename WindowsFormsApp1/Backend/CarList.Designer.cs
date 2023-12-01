@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.enumEditBtn = new System.Windows.Forms.Button();
             this.workerListBtn = new System.Windows.Forms.Button();
             this.KlientListBtn = new System.Windows.Forms.Button();
@@ -35,6 +36,22 @@
             this.contractListBtn = new System.Windows.Forms.Button();
             this.userInfoBtn = new System.Windows.Forms.Button();
             this.logoutBtn = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.automobilBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.database1DataSet = new WindowsFormsApp1.Database1DataSet();
+            this.automobilTableAdapter = new WindowsFormsApp1.Database1DataSetTableAdapters.automobilTableAdapter();
+            this.idautomobilDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.spzDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rokvyrobyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modelyidmodelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pojistovnaidpojistovnaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.majitelidmajitelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.automobilBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // enumEditBtn
@@ -107,11 +124,103 @@
             this.logoutBtn.UseVisualStyleBackColor = true;
             this.logoutBtn.Click += new System.EventHandler(this.logoutBtn_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Location = new System.Drawing.Point(12, 54);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(770, 384);
+            this.groupBox1.TabIndex = 14;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Seznam opravovaných aut";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idautomobilDataGridViewTextBoxColumn,
+            this.vinDataGridViewTextBoxColumn,
+            this.spzDataGridViewTextBoxColumn,
+            this.rokvyrobyDataGridViewTextBoxColumn,
+            this.modelyidmodelDataGridViewTextBoxColumn,
+            this.pojistovnaidpojistovnaDataGridViewTextBoxColumn,
+            this.majitelidmajitelDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.automobilBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(6, 19);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(758, 359);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // automobilBindingSource
+            // 
+            this.automobilBindingSource.DataMember = "automobil";
+            this.automobilBindingSource.DataSource = this.database1DataSet;
+            // 
+            // database1DataSet
+            // 
+            this.database1DataSet.DataSetName = "Database1DataSet";
+            this.database1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // automobilTableAdapter
+            // 
+            this.automobilTableAdapter.ClearBeforeFill = true;
+            // 
+            // idautomobilDataGridViewTextBoxColumn
+            // 
+            this.idautomobilDataGridViewTextBoxColumn.DataPropertyName = "idautomobil";
+            this.idautomobilDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.idautomobilDataGridViewTextBoxColumn.Name = "idautomobilDataGridViewTextBoxColumn";
+            this.idautomobilDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // vinDataGridViewTextBoxColumn
+            // 
+            this.vinDataGridViewTextBoxColumn.DataPropertyName = "vin";
+            this.vinDataGridViewTextBoxColumn.HeaderText = "vin";
+            this.vinDataGridViewTextBoxColumn.Name = "vinDataGridViewTextBoxColumn";
+            this.vinDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // spzDataGridViewTextBoxColumn
+            // 
+            this.spzDataGridViewTextBoxColumn.DataPropertyName = "spz";
+            this.spzDataGridViewTextBoxColumn.HeaderText = "spz";
+            this.spzDataGridViewTextBoxColumn.Name = "spzDataGridViewTextBoxColumn";
+            this.spzDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // rokvyrobyDataGridViewTextBoxColumn
+            // 
+            this.rokvyrobyDataGridViewTextBoxColumn.DataPropertyName = "rok_vyroby";
+            this.rokvyrobyDataGridViewTextBoxColumn.HeaderText = "Rok výroby";
+            this.rokvyrobyDataGridViewTextBoxColumn.Name = "rokvyrobyDataGridViewTextBoxColumn";
+            this.rokvyrobyDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // modelyidmodelDataGridViewTextBoxColumn
+            // 
+            this.modelyidmodelDataGridViewTextBoxColumn.DataPropertyName = "modely_idmodel";
+            this.modelyidmodelDataGridViewTextBoxColumn.HeaderText = "ID modelu";
+            this.modelyidmodelDataGridViewTextBoxColumn.Name = "modelyidmodelDataGridViewTextBoxColumn";
+            this.modelyidmodelDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // pojistovnaidpojistovnaDataGridViewTextBoxColumn
+            // 
+            this.pojistovnaidpojistovnaDataGridViewTextBoxColumn.DataPropertyName = "pojistovna_idpojistovna";
+            this.pojistovnaidpojistovnaDataGridViewTextBoxColumn.HeaderText = "ID pojišťovny";
+            this.pojistovnaidpojistovnaDataGridViewTextBoxColumn.Name = "pojistovnaidpojistovnaDataGridViewTextBoxColumn";
+            this.pojistovnaidpojistovnaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // majitelidmajitelDataGridViewTextBoxColumn
+            // 
+            this.majitelidmajitelDataGridViewTextBoxColumn.DataPropertyName = "majitel_idmajitel";
+            this.majitelidmajitelDataGridViewTextBoxColumn.HeaderText = "ID majitele";
+            this.majitelidmajitelDataGridViewTextBoxColumn.Name = "majitelidmajitelDataGridViewTextBoxColumn";
+            this.majitelidmajitelDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // CarList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.enumEditBtn);
             this.Controls.Add(this.workerListBtn);
             this.Controls.Add(this.KlientListBtn);
@@ -122,6 +231,11 @@
             this.Name = "CarList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
+            this.Load += new System.EventHandler(this.CarList_Load);
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.automobilBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -135,5 +249,17 @@
         private System.Windows.Forms.Button contractListBtn;
         private System.Windows.Forms.Button userInfoBtn;
         private System.Windows.Forms.Button logoutBtn;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private Database1DataSet database1DataSet;
+        private System.Windows.Forms.BindingSource automobilBindingSource;
+        private Database1DataSetTableAdapters.automobilTableAdapter automobilTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idautomobilDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vinDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn spzDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rokvyrobyDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn modelyidmodelDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pojistovnaidpojistovnaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn majitelidmajitelDataGridViewTextBoxColumn;
     }
 }
