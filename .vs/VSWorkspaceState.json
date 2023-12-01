@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\WindowsFormsApp1",
+    "\\WindowsFormsApp1\\Backend"
   ],
+  "SelectedNode": "\\ConsoleApp1.sln",
   "PreviewInSolutionExplorer": false
 }

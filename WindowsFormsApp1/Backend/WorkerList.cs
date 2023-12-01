@@ -59,5 +59,12 @@ namespace WindowsFormsApp1
             this.Close();
             hmpForm.Show();
         }
+
+        private void WorkerList_Load(object sender, EventArgs e)
+        {
+            // TODO: Tento řádek načte data do tabulky 'database1DataSet5.zamestnanec'. Můžete jej přesunout nebo jej odstranit podle potřeby.
+            this.zamestnanecTableAdapter.Fill(this.database1DataSet5.zamestnanec);
+
+        }
     }
 }

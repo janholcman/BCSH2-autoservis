@@ -59,5 +59,12 @@ namespace WindowsFormsApp1
             this.Close();
             hmpForm.Show();
         }
+
+        private void CarList_Load(object sender, EventArgs e)
+        {
+            // TODO: Tento řádek načte data do tabulky 'database1DataSet.automobil'. Můžete jej přesunout nebo jej odstranit podle potřeby.
+            this.automobilTableAdapter.Fill(this.database1DataSet.automobil);
+
+        }
     }
 }

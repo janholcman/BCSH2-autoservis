@@ -59,5 +59,12 @@ namespace WindowsFormsApp1
             this.Close();
             hmpForm.Show();
         }
+
+        private void ContractList_Load(object sender, EventArgs e)
+        {
+            // TODO: Tento řádek načte data do tabulky 'database1DataSet1.zakazka'. Můžete jej přesunout nebo jej odstranit podle potřeby.
+            this.zakazkaTableAdapter.Fill(this.database1DataSet1.zakazka);
+
+        }
     }
 }

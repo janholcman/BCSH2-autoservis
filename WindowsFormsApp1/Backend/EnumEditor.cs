@@ -59,5 +59,14 @@ namespace WindowsFormsApp1
             this.Close();
             hmpForm.Show();
         }
+
+        private void EnumEditor_Load(object sender, EventArgs e)
+        {
+            // TODO: Tento řádek načte data do tabulky 'database1DataSet3.pozice'. Můžete jej přesunout nebo jej odstranit podle potřeby.
+            this.poziceTableAdapter.Fill(this.database1DataSet3.pozice);
+            // TODO: Tento řádek načte data do tabulky 'database1DataSet2.pojistovna'. Můžete jej přesunout nebo jej odstranit podle potřeby.
+            this.pojistovnaTableAdapter.Fill(this.database1DataSet2.pojistovna);
+
+        }
     }
 }
