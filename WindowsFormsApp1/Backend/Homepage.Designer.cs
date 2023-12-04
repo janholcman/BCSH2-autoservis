@@ -60,7 +60,7 @@
             this.Controls.Add(this.LoginBtn);
             this.Name = "Homepage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Homepage";
             this.ResumeLayout(false);
             this.PerformLayout();
 

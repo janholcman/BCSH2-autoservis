@@ -144,6 +144,24 @@
     <Compile Include="Backend\EnumEditor.Designer.cs">
       <DependentUpon>EnumEditor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Backend\NewCarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backend\NewCarForm.Designer.cs">
+      <DependentUpon>NewCarForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backend\NewContractForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backend\NewContractForm.Designer.cs">
+      <DependentUpon>NewContractForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backend\NewKlientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backend\NewKlientForm.Designer.cs">
+      <DependentUpon>NewKlientForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Backend\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,6 +185,24 @@
     </Compile>
     <Compile Include="Backend\CarList.Designer.cs">
       <DependentUpon>CarList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backend\NewAdresForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backend\NewAdresForm.Designer.cs">
+      <DependentUpon>NewAdresForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backend\NewOwnerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backend\NewOwnerForm.Designer.cs">
+      <DependentUpon>NewOwnerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backend\NewWorkerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backend\NewWorkerForm.Designer.cs">
+      <DependentUpon>NewWorkerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Backend\WorkerList.cs">
       <SubType>Form</SubType>
@@ -236,6 +272,18 @@
     <EmbeddedResource Include="Backend\EnumEditor.resx">
       <DependentUpon>EnumEditor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Backend\NewAdresForm.resx">
+      <DependentUpon>NewAdresForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backend\NewCarForm.resx">
+      <DependentUpon>NewCarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backend\NewContractForm.resx">
+      <DependentUpon>NewContractForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backend\NewKlientForm.resx">
+      <DependentUpon>NewKlientForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Backend\Homepage.resx">
       <DependentUpon>Homepage.cs</DependentUpon>
     </EmbeddedResource>
@@ -247,6 +295,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Backend\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backend\NewOwnerForm.resx">
+      <DependentUpon>NewOwnerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backend\NewWorkerForm.resx">
+      <DependentUpon>NewWorkerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

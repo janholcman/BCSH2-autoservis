@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.errorMessage = new System.Windows.Forms.Label();
             this.nameTextBox = new System.Windows.Forms.TextBox();
@@ -36,11 +37,14 @@
             this.loginBtn = new System.Windows.Forms.Button();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.showBtn = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.showBtn)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.showBtn);
             this.groupBox1.Controls.Add(this.errorMessage);
             this.groupBox1.Controls.Add(this.nameTextBox);
             this.groupBox1.Controls.Add(this.label3);
@@ -50,7 +54,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(232, 168);
+            this.groupBox1.Size = new System.Drawing.Size(260, 168);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Přihlašte se";
@@ -93,7 +97,8 @@
             // 
             // loginBtn
             // 
-            this.loginBtn.Location = new System.Drawing.Point(143, 139);
+            this.loginBtn.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.loginBtn.Location = new System.Drawing.Point(179, 139);
             this.loginBtn.Name = "loginBtn";
             this.loginBtn.Size = new System.Drawing.Size(75, 23);
             this.loginBtn.TabIndex = 1;
@@ -105,9 +110,9 @@
             // 
             this.passwordTextBox.Location = new System.Drawing.Point(118, 98);
             this.passwordTextBox.Name = "passwordTextBox";
-            this.passwordTextBox.PasswordChar = '*';
             this.passwordTextBox.Size = new System.Drawing.Size(100, 20);
             this.passwordTextBox.TabIndex = 6;
+            this.passwordTextBox.UseSystemPasswordChar = true;
             // 
             // label2
             // 
@@ -118,17 +123,28 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Jméno:";
             // 
+            // showBtn
+            // 
+            this.showBtn.Image = ((System.Drawing.Image)(resources.GetObject("showBtn.Image")));
+            this.showBtn.Location = new System.Drawing.Point(224, 98);
+            this.showBtn.Name = "showBtn";
+            this.showBtn.Size = new System.Drawing.Size(16, 16);
+            this.showBtn.TabIndex = 23;
+            this.showBtn.TabStop = false;
+            this.showBtn.Click += new System.EventHandler(this.showBtn_Click);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(255, 190);
+            this.ClientSize = new System.Drawing.Size(284, 191);
             this.Controls.Add(this.groupBox1);
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Přihlášení";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.showBtn)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -143,5 +159,6 @@
         private System.Windows.Forms.Button loginBtn;
         private System.Windows.Forms.TextBox passwordTextBox;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox showBtn;
     }
 }
