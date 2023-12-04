@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GUI.Objects
 {
@@ -11,7 +7,7 @@ namespace GUI.Objects
         int Id { get; set; }
         DateTime DatumSplatnosti { get; set; }
         float Cena { get; set; }
-        String CisloBanky {  get; set; }
+        String CisloBanky { get; set; }
 
         public PlatbaKartou(int id, DateTime datumSplatnosti, float cena, String cisloBanky) : base(id, datumSplatnosti, cena)
         {

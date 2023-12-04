@@ -1,18 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GUI.Objects
 {
     internal class Servis
     {
-        int Id {  get; set; }
+        int Id { get; set; }
         DateTime DatumServisu { get; set; }
         Automobil Automobil { get; set; }
-        Zamestnanec Zamestnanec {  get; set; }
-        Zakazka Zakazka {  get; set; }
+        Zamestnanec Zamestnanec { get; set; }
+        Zakazka Zakazka { get; set; }
 
         public Servis(int id, DateTime datumServisu, Automobil automobil, Zamestnanec zamestnanec, Zakazka zakazka)
         {

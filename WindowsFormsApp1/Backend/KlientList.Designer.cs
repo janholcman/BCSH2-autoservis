@@ -41,6 +41,7 @@
             this.zakaznikBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.database1DataSet4 = new WindowsFormsApp1.Database1DataSet4();
             this.zakaznikTableAdapter = new WindowsFormsApp1.Database1DataSet4TableAdapters.zakaznikTableAdapter();
+            this.addKlientBtn = new System.Windows.Forms.Button();
             this.idzakaznikDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.jmenozakaznikDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prijmenizakaznikDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -124,10 +125,11 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.addKlientBtn);
             this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.Location = new System.Drawing.Point(12, 42);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(619, 396);
+            this.groupBox1.Size = new System.Drawing.Size(776, 396);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Seznam zákazníků";
@@ -145,7 +147,7 @@
             this.dataGridView1.DataSource = this.zakaznikBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(7, 20);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(606, 370);
+            this.dataGridView1.Size = new System.Drawing.Size(612, 370);
             this.dataGridView1.TabIndex = 0;
             // 
             // zakaznikBindingSource
@@ -161,6 +163,16 @@
             // zakaznikTableAdapter
             // 
             this.zakaznikTableAdapter.ClearBeforeFill = true;
+            // 
+            // addKlientBtn
+            // 
+            this.addKlientBtn.Location = new System.Drawing.Point(626, 20);
+            this.addKlientBtn.Name = "addKlientBtn";
+            this.addKlientBtn.Size = new System.Drawing.Size(144, 23);
+            this.addKlientBtn.TabIndex = 1;
+            this.addKlientBtn.Text = "Přidat zákazníka";
+            this.addKlientBtn.UseVisualStyleBackColor = true;
+            this.addKlientBtn.Click += new System.EventHandler(this.addKlientBtn_Click);
             // 
             // idzakaznikDataGridViewTextBoxColumn
             // 
@@ -195,6 +207,8 @@
             this.login.HeaderText = "Přihlášení";
             this.login.Name = "login";
             this.login.Text = "Přihlášení";
+            this.login.ToolTipText = "Přihlášení";
+            this.login.UseColumnTextForButtonValue = true;
             // 
             // KlientList
             // 
@@ -211,7 +225,7 @@
             this.Controls.Add(this.logoutBtn);
             this.Name = "KlientList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "KlientList";
+            this.Text = "Zákazníci";
             this.Load += new System.EventHandler(this.KlientList_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -235,6 +249,7 @@
         private Database1DataSet4 database1DataSet4;
         private System.Windows.Forms.BindingSource zakaznikBindingSource;
         private Database1DataSet4TableAdapters.zakaznikTableAdapter zakaznikTableAdapter;
+        private System.Windows.Forms.Button addKlientBtn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idzakaznikDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn jmenozakaznikDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn prijmenizakaznikDataGridViewTextBoxColumn;
