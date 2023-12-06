@@ -19,35 +19,35 @@ namespace WindowsFormsApp1
         {
             Account form = new Account(hmpForm, conn);
             form.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void contractListBtn_Click(object sender, EventArgs e)
         {
             ContractList form = new ContractList(hmpForm, conn);
             form.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void carListBtn_Click(object sender, EventArgs e)
         {
             CarList form = new CarList(hmpForm, conn);
             form.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void KlientListBtn_Click(object sender, EventArgs e)
         {
             KlientList form = new KlientList(hmpForm, conn);
             form.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void workerListBtn_Click(object sender, EventArgs e)
         {
             WorkerList form = new WorkerList(hmpForm, conn);
             form.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void logoutBtn_Click(object sender, EventArgs e)

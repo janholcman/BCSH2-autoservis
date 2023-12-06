@@ -37,11 +37,8 @@
             this.userInfoBtn = new System.Windows.Forms.Button();
             this.logoutBtn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.zamestnanecBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.database1DataSet5 = new WindowsFormsApp1.Database1DataSet5();
-            this.zamestnanecTableAdapter = new WindowsFormsApp1.Database1DataSet5TableAdapters.zamestnanecTableAdapter();
             this.addWorkerBtn = new System.Windows.Forms.Button();
+            this.workerDataGrid = new System.Windows.Forms.DataGridView();
             this.idzamestnanecDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.jmenozamestnanecDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prijmenizamestnanecDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,8 +48,12 @@
             this.mzdaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.poziceidpoziceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.login = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.zamestnanecBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.database1DataSet5 = new WindowsFormsApp1.Database1DataSet5();
+            this.zamestnanecTableAdapter = new WindowsFormsApp1.Database1DataSet5TableAdapters.zamestnanecTableAdapter();
+            this.refreshBtn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.workerDataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.zamestnanecBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet5)).BeginInit();
             this.SuspendLayout();
@@ -129,48 +130,15 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.refreshBtn);
             this.groupBox1.Controls.Add(this.addWorkerBtn);
-            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Controls.Add(this.workerDataGrid);
             this.groupBox1.Location = new System.Drawing.Point(13, 42);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(775, 396);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Seznam pracovníků";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idzamestnanecDataGridViewTextBoxColumn,
-            this.jmenozamestnanecDataGridViewTextBoxColumn,
-            this.prijmenizamestnanecDataGridViewTextBoxColumn,
-            this.rodnecisloDataGridViewTextBoxColumn,
-            this.datumnastupuDataGridViewTextBoxColumn,
-            this.hodinovamzdaDataGridViewTextBoxColumn,
-            this.mzdaDataGridViewTextBoxColumn,
-            this.poziceidpoziceDataGridViewTextBoxColumn,
-            this.login});
-            this.dataGridView1.DataSource = this.zamestnanecBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 20);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(612, 370);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // zamestnanecBindingSource
-            // 
-            this.zamestnanecBindingSource.DataMember = "zamestnanec";
-            this.zamestnanecBindingSource.DataSource = this.database1DataSet5;
-            // 
-            // database1DataSet5
-            // 
-            this.database1DataSet5.DataSetName = "Database1DataSet5";
-            this.database1DataSet5.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // zamestnanecTableAdapter
-            // 
-            this.zamestnanecTableAdapter.ClearBeforeFill = true;
             // 
             // addWorkerBtn
             // 
@@ -180,6 +148,27 @@
             this.addWorkerBtn.TabIndex = 1;
             this.addWorkerBtn.Text = "Přidat zaměstnance";
             this.addWorkerBtn.UseVisualStyleBackColor = true;
+            this.addWorkerBtn.Click += new System.EventHandler(this.addWorkerBtn_Click);
+            // 
+            // workerDataGrid
+            // 
+            this.workerDataGrid.AutoGenerateColumns = false;
+            this.workerDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.workerDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idzamestnanecDataGridViewTextBoxColumn,
+            this.jmenozamestnanecDataGridViewTextBoxColumn,
+            this.prijmenizamestnanecDataGridViewTextBoxColumn,
+            this.rodnecisloDataGridViewTextBoxColumn,
+            this.datumnastupuDataGridViewTextBoxColumn,
+            this.hodinovamzdaDataGridViewTextBoxColumn,
+            this.mzdaDataGridViewTextBoxColumn,
+            this.poziceidpoziceDataGridViewTextBoxColumn,
+            this.login});
+            this.workerDataGrid.DataSource = this.zamestnanecBindingSource;
+            this.workerDataGrid.Location = new System.Drawing.Point(6, 20);
+            this.workerDataGrid.Name = "workerDataGrid";
+            this.workerDataGrid.Size = new System.Drawing.Size(612, 370);
+            this.workerDataGrid.TabIndex = 0;
             // 
             // idzamestnanecDataGridViewTextBoxColumn
             // 
@@ -248,6 +237,30 @@
             this.login.ToolTipText = "Přihlášení";
             this.login.UseColumnTextForButtonValue = true;
             // 
+            // zamestnanecBindingSource
+            // 
+            this.zamestnanecBindingSource.DataMember = "zamestnanec";
+            this.zamestnanecBindingSource.DataSource = this.database1DataSet5;
+            // 
+            // database1DataSet5
+            // 
+            this.database1DataSet5.DataSetName = "Database1DataSet5";
+            this.database1DataSet5.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // zamestnanecTableAdapter
+            // 
+            this.zamestnanecTableAdapter.ClearBeforeFill = true;
+            // 
+            // refreshBtn
+            // 
+            this.refreshBtn.Location = new System.Drawing.Point(625, 50);
+            this.refreshBtn.Name = "refreshBtn";
+            this.refreshBtn.Size = new System.Drawing.Size(144, 23);
+            this.refreshBtn.TabIndex = 2;
+            this.refreshBtn.Text = "Znovu načíst seznam";
+            this.refreshBtn.UseVisualStyleBackColor = true;
+            this.refreshBtn.Click += new System.EventHandler(this.refreshBtn_Click);
+            // 
             // WorkerList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -266,7 +279,7 @@
             this.Text = "Pracovníci";
             this.Load += new System.EventHandler(this.WorkerList_Load);
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.workerDataGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.zamestnanecBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet5)).EndInit();
             this.ResumeLayout(false);
@@ -286,7 +299,7 @@
         private Database1DataSet5 database1DataSet5;
         private System.Windows.Forms.BindingSource zamestnanecBindingSource;
         private Database1DataSet5TableAdapters.zamestnanecTableAdapter zamestnanecTableAdapter;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView workerDataGrid;
         private System.Windows.Forms.Button addWorkerBtn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idzamestnanecDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn jmenozamestnanecDataGridViewTextBoxColumn;
@@ -297,5 +310,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn mzdaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn poziceidpoziceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewButtonColumn login;
+        private System.Windows.Forms.Button refreshBtn;
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using WindowsFormsApp1.Backend;
@@ -20,35 +21,35 @@ namespace WindowsFormsApp1
         {
             Account form = new Account(hmpForm, conn);
             form.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void contractListBtn_Click(object sender, EventArgs e)
         {
             ContractList form = new ContractList(hmpForm, conn);
             form.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void carListBtn_Click(object sender, EventArgs e)
         {
             CarList form = new CarList(hmpForm, conn);
             form.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void workerListBtn_Click(object sender, EventArgs e)
         {
             WorkerList form = new WorkerList(hmpForm, conn);
             form.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void enumEditBtn_Click(object sender, EventArgs e)
         {
             EnumEditor form = new EnumEditor(hmpForm, conn);
             form.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void logoutBtn_Click(object sender, EventArgs e)
@@ -66,8 +67,28 @@ namespace WindowsFormsApp1
 
         private void addKlientBtn_Click(object sender, EventArgs e)
         {
-            NewKlientForm form = new NewKlientForm(this, conn);
+            NewKlientForm form = new NewKlientForm(conn);
             form.Show();
+        }
+
+        private void refreshBtn_Click(object sender, EventArgs e)
+        {
+            KlientDataGrid.DataSource = null;
+            loaddata();
+        }
+
+        private void loaddata()
+        {
+            conn.Open();
+
+            string query = "SELECT * FROM zakaznik";
+            SqlCommand cmd = new SqlCommand(query, conn);
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            KlientDataGrid.DataSource = dt;
+
+            conn.Close();
         }
     }
 }

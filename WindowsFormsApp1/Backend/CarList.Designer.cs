@@ -37,7 +37,8 @@
             this.userInfoBtn = new System.Windows.Forms.Button();
             this.logoutBtn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.addCarBtn = new System.Windows.Forms.Button();
+            this.carListDataGrid = new System.Windows.Forms.DataGridView();
             this.idautomobilDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.spzDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,9 +49,9 @@
             this.automobilBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.database1DataSet = new WindowsFormsApp1.Database1DataSet();
             this.automobilTableAdapter = new WindowsFormsApp1.Database1DataSetTableAdapters.automobilTableAdapter();
-            this.addCarBtn = new System.Windows.Forms.Button();
+            this.resetBtn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carListDataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.automobilBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
             this.SuspendLayout();
@@ -127,8 +128,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.resetBtn);
             this.groupBox1.Controls.Add(this.addCarBtn);
-            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Controls.Add(this.carListDataGrid);
             this.groupBox1.Location = new System.Drawing.Point(12, 41);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(776, 397);
@@ -136,11 +138,21 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Seznam opravovaných aut";
             // 
-            // dataGridView1
+            // addCarBtn
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.addCarBtn.Location = new System.Drawing.Point(626, 20);
+            this.addCarBtn.Name = "addCarBtn";
+            this.addCarBtn.Size = new System.Drawing.Size(144, 23);
+            this.addCarBtn.TabIndex = 1;
+            this.addCarBtn.Text = "Přidat auto";
+            this.addCarBtn.UseVisualStyleBackColor = true;
+            this.addCarBtn.Click += new System.EventHandler(this.addCarBtn_Click);
+            // 
+            // carListDataGrid
+            // 
+            this.carListDataGrid.AutoGenerateColumns = false;
+            this.carListDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.carListDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idautomobilDataGridViewTextBoxColumn,
             this.vinDataGridViewTextBoxColumn,
             this.spzDataGridViewTextBoxColumn,
@@ -148,11 +160,11 @@
             this.modelyidmodelDataGridViewTextBoxColumn,
             this.pojistovnaidpojistovnaDataGridViewTextBoxColumn,
             this.majitelidmajitelDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.automobilBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 19);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(613, 372);
-            this.dataGridView1.TabIndex = 0;
+            this.carListDataGrid.DataSource = this.automobilBindingSource;
+            this.carListDataGrid.Location = new System.Drawing.Point(6, 19);
+            this.carListDataGrid.Name = "carListDataGrid";
+            this.carListDataGrid.Size = new System.Drawing.Size(613, 372);
+            this.carListDataGrid.TabIndex = 0;
             // 
             // idautomobilDataGridViewTextBoxColumn
             // 
@@ -217,15 +229,15 @@
             // 
             this.automobilTableAdapter.ClearBeforeFill = true;
             // 
-            // addCarBtn
+            // resetBtn
             // 
-            this.addCarBtn.Location = new System.Drawing.Point(626, 20);
-            this.addCarBtn.Name = "addCarBtn";
-            this.addCarBtn.Size = new System.Drawing.Size(144, 23);
-            this.addCarBtn.TabIndex = 1;
-            this.addCarBtn.Text = "Přidat auto";
-            this.addCarBtn.UseVisualStyleBackColor = true;
-            this.addCarBtn.Click += new System.EventHandler(this.addCarBtn_Click);
+            this.resetBtn.Location = new System.Drawing.Point(626, 50);
+            this.resetBtn.Name = "resetBtn";
+            this.resetBtn.Size = new System.Drawing.Size(144, 23);
+            this.resetBtn.TabIndex = 2;
+            this.resetBtn.Text = "Znovu načíst seznam";
+            this.resetBtn.UseVisualStyleBackColor = true;
+            this.resetBtn.Click += new System.EventHandler(this.resetBtn_Click);
             // 
             // CarList
             // 
@@ -245,7 +257,7 @@
             this.Text = "Automobily";
             this.Load += new System.EventHandler(this.CarList_Load);
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carListDataGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.automobilBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
             this.ResumeLayout(false);
@@ -262,7 +274,7 @@
         private System.Windows.Forms.Button userInfoBtn;
         private System.Windows.Forms.Button logoutBtn;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView carListDataGrid;
         private Database1DataSet database1DataSet;
         private System.Windows.Forms.BindingSource automobilBindingSource;
         private Database1DataSetTableAdapters.automobilTableAdapter automobilTableAdapter;
@@ -274,5 +286,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn pojistovnaidpojistovnaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn majitelidmajitelDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button addCarBtn;
+        private System.Windows.Forms.Button resetBtn;
     }
 }

@@ -9,11 +9,11 @@ namespace GUI.Objects
         String Vin { get; set; }
         String Spz { get; set; }
         int RokVyroby { get; set; }
-        Znacka Znacka { get; set; }
+        Model Znacka { get; set; }
         Pojistovna Pojistovna { get; set; }
         Majitel Majitel { get; set; }
 
-        public Automobil(int id, string vin, string spz, int rokVyroby, Znacka znacka, Pojistovna pojistovna, Majitel majitel)
+        public Automobil(int id, string vin, string spz, int rokVyroby, Model znacka, Pojistovna pojistovna, Majitel majitel)
         {
             Id = id;
             Vin = vin;

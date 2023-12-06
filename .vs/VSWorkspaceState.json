@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\WindowsFormsApp1",
-    "\\WindowsFormsApp1\\Backend"
+    "\\WindowsFormsApp1\\Backend",
+    "\\WindowsFormsApp1\\Objects"
   ],
-  "SelectedNode": "\\WindowsFormsApp1\\Backend\\NewKlientForm.cs",
+  "SelectedNode": "\\WindowsFormsApp1\\Backend\\NewCarForm.cs",
   "PreviewInSolutionExplorer": false
 }

@@ -117,4 +117,32 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="secondNameTT.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        cAAAAHABznhikwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAE1SURBVDhPhVI7
+        UsMwEBWEA0CXwDGCh5YGFBsKGu5Dwm0c+lTEGChyByq4QGYIQxEYL29Xq4ksi+TNvNHn7bN3V2v+A1Xn
+        B/R6cSzEXq93g55GGdX5A9YvkJS8n1JVnGpYF0Rmj+rRPQKbwLhS+jO0fMKxattAzT4QzN+pujmkl6sj
+        nD8ibaI2B1xmYPhn5kxl1meR1rTK0ZrDAKLaLlSGbhcdHT1xIne73TDPNwkAeB9pzBWVtz1Dj9cnCRG0
+        S/XjA3aZjHm2AyPvnBKlTmTnMoz741gVfV9C+FQhubnMlPYpJbgUMSTpoG0sxczgJ8FFnOYvmNG8OMMa
+        aw3NL4dqd5AJawf9SINdk9dtzY7VtoGMsvtI+LdvMBplO06OsoeWU0ZG3pedtLeBO8zvLKS7fb2OYMwf
+        0sABpf4m9ngAAAAASUVORK5CYII=
+</value>
+  </data>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="firstNameTT.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        cAAAAHABznhikwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAE1SURBVDhPhVI7
+        UsMwEBWEA0CXwDGCh5YGFBsKGu5Dwm0c+lTEGChyByq4QGYIQxEYL29Xq4ksi+TNvNHn7bN3V2v+A1Xn
+        B/R6cSzEXq93g55GGdX5A9YvkJS8n1JVnGpYF0Rmj+rRPQKbwLhS+jO0fMKxattAzT4QzN+pujmkl6sj
+        nD8ibaI2B1xmYPhn5kxl1meR1rTK0ZrDAKLaLlSGbhcdHT1xIne73TDPNwkAeB9pzBWVtz1Dj9cnCRG0
+        S/XjA3aZjHm2AyPvnBKlTmTnMoz741gVfV9C+FQhubnMlPYpJbgUMSTpoG0sxczgJ8FFnOYvmNG8OMMa
+        aw3NL4dqd5AJawf9SINdk9dtzY7VtoGMsvtI+LdvMBplO06OsoeWU0ZG3pedtLeBO8zvLKS7fb2OYMwf
+        0sABpf4m9ngAAAAASUVORK5CYII=
+</value>
+  </data>
 </root>

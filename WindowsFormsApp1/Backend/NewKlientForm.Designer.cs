@@ -53,6 +53,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.userNameWarning = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.showBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userPasswordTT)).BeginInit();
@@ -60,10 +61,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.adressTT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.secondNameTT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.firstNameTT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userNameWarning)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.userNameWarning);
             this.groupBox1.Controls.Add(this.showBtn);
             this.groupBox1.Controls.Add(this.userPasswordTT);
             this.groupBox1.Controls.Add(this.userNameTT);
@@ -284,6 +287,17 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Jméno:";
             // 
+            // userNameWarning
+            // 
+            this.userNameWarning.Image = ((System.Drawing.Image)(resources.GetObject("userNameWarning.Image")));
+            this.userNameWarning.Location = new System.Drawing.Point(338, 127);
+            this.userNameWarning.Name = "userNameWarning";
+            this.userNameWarning.Size = new System.Drawing.Size(16, 16);
+            this.userNameWarning.TabIndex = 23;
+            this.userNameWarning.TabStop = false;
+            this.toolTip1.SetToolTip(this.userNameWarning, "Název účtu není jedinečný!");
+            this.userNameWarning.Visible = false;
+            // 
             // NewKlientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -301,6 +315,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.adressTT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.secondNameTT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.firstNameTT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userNameWarning)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -330,5 +345,6 @@
         private System.Windows.Forms.PictureBox userNameTT;
         private System.Windows.Forms.PictureBox adressTT;
         private System.Windows.Forms.PictureBox showBtn;
+        private System.Windows.Forms.PictureBox userNameWarning;
     }
 }

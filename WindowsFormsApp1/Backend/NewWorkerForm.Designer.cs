@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewWorkerForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.confirmBtn = new System.Windows.Forms.Button();
             this.cancelBtn = new System.Windows.Forms.Button();
@@ -47,12 +49,46 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.firstNameTT = new System.Windows.Forms.PictureBox();
+            this.secondNameTT = new System.Windows.Forms.PictureBox();
+            this.birthNumberTT = new System.Windows.Forms.PictureBox();
+            this.workerPositionTT = new System.Windows.Forms.PictureBox();
+            this.userNameTT = new System.Windows.Forms.PictureBox();
+            this.moneyPerHourTT = new System.Windows.Forms.PictureBox();
+            this.userPasswordTT = new System.Windows.Forms.PictureBox();
+            this.workerStartTT = new System.Windows.Forms.PictureBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.birthNumberWarning = new System.Windows.Forms.PictureBox();
+            this.userNameWarning = new System.Windows.Forms.PictureBox();
+            this.showBtn = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.moneyPerHourNumpicker)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.firstNameTT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.secondNameTT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.birthNumberTT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.workerPositionTT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userNameTT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.moneyPerHourTT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userPasswordTT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.workerStartTT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.birthNumberWarning)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userNameWarning)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.showBtn)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.showBtn);
+            this.groupBox1.Controls.Add(this.userNameWarning);
+            this.groupBox1.Controls.Add(this.birthNumberWarning);
+            this.groupBox1.Controls.Add(this.workerStartTT);
+            this.groupBox1.Controls.Add(this.userPasswordTT);
+            this.groupBox1.Controls.Add(this.moneyPerHourTT);
+            this.groupBox1.Controls.Add(this.userNameTT);
+            this.groupBox1.Controls.Add(this.workerPositionTT);
+            this.groupBox1.Controls.Add(this.birthNumberTT);
+            this.groupBox1.Controls.Add(this.secondNameTT);
+            this.groupBox1.Controls.Add(this.firstNameTT);
             this.groupBox1.Controls.Add(this.confirmBtn);
             this.groupBox1.Controls.Add(this.cancelBtn);
             this.groupBox1.Controls.Add(this.positionCB);
@@ -73,7 +109,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(13, 13);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(303, 276);
+            this.groupBox1.Size = new System.Drawing.Size(315, 276);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
@@ -85,6 +121,7 @@
             this.confirmBtn.TabIndex = 22;
             this.confirmBtn.Text = "Přidat";
             this.confirmBtn.UseVisualStyleBackColor = true;
+            this.confirmBtn.Click += new System.EventHandler(this.confirmBtn_Click);
             // 
             // cancelBtn
             // 
@@ -94,6 +131,7 @@
             this.cancelBtn.TabIndex = 21;
             this.cancelBtn.Text = "Zrušit";
             this.cancelBtn.UseVisualStyleBackColor = true;
+            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
             // 
             // positionCB
             // 
@@ -137,7 +175,6 @@
             // 
             this.userPasswordTF.Location = new System.Drawing.Point(93, 208);
             this.userPasswordTF.Name = "userPasswordTF";
-            this.userPasswordTF.PasswordChar = '*';
             this.userPasswordTF.Size = new System.Drawing.Size(170, 20);
             this.userPasswordTF.TabIndex = 17;
             this.userPasswordTF.UseSystemPasswordChar = true;
@@ -242,11 +279,131 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Jméno:";
             // 
+            // firstNameTT
+            // 
+            this.firstNameTT.Image = ((System.Drawing.Image)(resources.GetObject("firstNameTT.Image")));
+            this.firstNameTT.Location = new System.Drawing.Point(269, 20);
+            this.firstNameTT.Name = "firstNameTT";
+            this.firstNameTT.Size = new System.Drawing.Size(16, 16);
+            this.firstNameTT.TabIndex = 23;
+            this.firstNameTT.TabStop = false;
+            this.toolTip1.SetToolTip(this.firstNameTT, "Pole nesmí být prázdné!");
+            this.firstNameTT.Visible = false;
+            // 
+            // secondNameTT
+            // 
+            this.secondNameTT.Image = ((System.Drawing.Image)(resources.GetObject("secondNameTT.Image")));
+            this.secondNameTT.Location = new System.Drawing.Point(269, 47);
+            this.secondNameTT.Name = "secondNameTT";
+            this.secondNameTT.Size = new System.Drawing.Size(16, 16);
+            this.secondNameTT.TabIndex = 24;
+            this.secondNameTT.TabStop = false;
+            this.toolTip1.SetToolTip(this.secondNameTT, "Pole nesmí být prázdné!");
+            this.secondNameTT.Visible = false;
+            // 
+            // birthNumberTT
+            // 
+            this.birthNumberTT.Image = ((System.Drawing.Image)(resources.GetObject("birthNumberTT.Image")));
+            this.birthNumberTT.Location = new System.Drawing.Point(269, 74);
+            this.birthNumberTT.Name = "birthNumberTT";
+            this.birthNumberTT.Size = new System.Drawing.Size(16, 16);
+            this.birthNumberTT.TabIndex = 25;
+            this.birthNumberTT.TabStop = false;
+            this.toolTip1.SetToolTip(this.birthNumberTT, "Pole nesmí být prázdné!");
+            this.birthNumberTT.Visible = false;
+            // 
+            // workerPositionTT
+            // 
+            this.workerPositionTT.Image = ((System.Drawing.Image)(resources.GetObject("workerPositionTT.Image")));
+            this.workerPositionTT.Location = new System.Drawing.Point(269, 154);
+            this.workerPositionTT.Name = "workerPositionTT";
+            this.workerPositionTT.Size = new System.Drawing.Size(16, 16);
+            this.workerPositionTT.TabIndex = 28;
+            this.workerPositionTT.TabStop = false;
+            this.toolTip1.SetToolTip(this.workerPositionTT, "Pole nesmí být prázdné!");
+            this.workerPositionTT.Visible = false;
+            // 
+            // userNameTT
+            // 
+            this.userNameTT.Image = ((System.Drawing.Image)(resources.GetObject("userNameTT.Image")));
+            this.userNameTT.Location = new System.Drawing.Point(269, 181);
+            this.userNameTT.Name = "userNameTT";
+            this.userNameTT.Size = new System.Drawing.Size(16, 16);
+            this.userNameTT.TabIndex = 29;
+            this.userNameTT.TabStop = false;
+            this.toolTip1.SetToolTip(this.userNameTT, "Pole nesmí být prázdné!");
+            this.userNameTT.Visible = false;
+            // 
+            // moneyPerHourTT
+            // 
+            this.moneyPerHourTT.Image = ((System.Drawing.Image)(resources.GetObject("moneyPerHourTT.Image")));
+            this.moneyPerHourTT.Location = new System.Drawing.Point(269, 128);
+            this.moneyPerHourTT.Name = "moneyPerHourTT";
+            this.moneyPerHourTT.Size = new System.Drawing.Size(16, 16);
+            this.moneyPerHourTT.TabIndex = 30;
+            this.moneyPerHourTT.TabStop = false;
+            this.toolTip1.SetToolTip(this.moneyPerHourTT, "Pole nesmí být prázdné!");
+            this.moneyPerHourTT.Visible = false;
+            // 
+            // userPasswordTT
+            // 
+            this.userPasswordTT.Image = ((System.Drawing.Image)(resources.GetObject("userPasswordTT.Image")));
+            this.userPasswordTT.Location = new System.Drawing.Point(291, 208);
+            this.userPasswordTT.Name = "userPasswordTT";
+            this.userPasswordTT.Size = new System.Drawing.Size(16, 16);
+            this.userPasswordTT.TabIndex = 31;
+            this.userPasswordTT.TabStop = false;
+            this.toolTip1.SetToolTip(this.userPasswordTT, "Pole nesmí být prázdné!");
+            this.userPasswordTT.Visible = false;
+            // 
+            // workerStartTT
+            // 
+            this.workerStartTT.Image = ((System.Drawing.Image)(resources.GetObject("workerStartTT.Image")));
+            this.workerStartTT.Location = new System.Drawing.Point(269, 101);
+            this.workerStartTT.Name = "workerStartTT";
+            this.workerStartTT.Size = new System.Drawing.Size(16, 16);
+            this.workerStartTT.TabIndex = 32;
+            this.workerStartTT.TabStop = false;
+            this.toolTip1.SetToolTip(this.workerStartTT, "Pole nesmí být prázdné!");
+            this.workerStartTT.Visible = false;
+            // 
+            // birthNumberWarning
+            // 
+            this.birthNumberWarning.Image = ((System.Drawing.Image)(resources.GetObject("birthNumberWarning.Image")));
+            this.birthNumberWarning.Location = new System.Drawing.Point(291, 74);
+            this.birthNumberWarning.Name = "birthNumberWarning";
+            this.birthNumberWarning.Size = new System.Drawing.Size(16, 16);
+            this.birthNumberWarning.TabIndex = 33;
+            this.birthNumberWarning.TabStop = false;
+            this.toolTip1.SetToolTip(this.birthNumberWarning, "Rodné číslo není jedinečné!");
+            this.birthNumberWarning.Visible = false;
+            // 
+            // userNameWarning
+            // 
+            this.userNameWarning.Image = ((System.Drawing.Image)(resources.GetObject("userNameWarning.Image")));
+            this.userNameWarning.Location = new System.Drawing.Point(291, 181);
+            this.userNameWarning.Name = "userNameWarning";
+            this.userNameWarning.Size = new System.Drawing.Size(16, 16);
+            this.userNameWarning.TabIndex = 34;
+            this.userNameWarning.TabStop = false;
+            this.toolTip1.SetToolTip(this.userNameWarning, "Název účtu není jedinečný");
+            this.userNameWarning.Visible = false;
+            // 
+            // showBtn
+            // 
+            this.showBtn.Image = ((System.Drawing.Image)(resources.GetObject("showBtn.Image")));
+            this.showBtn.Location = new System.Drawing.Point(269, 208);
+            this.showBtn.Name = "showBtn";
+            this.showBtn.Size = new System.Drawing.Size(16, 16);
+            this.showBtn.TabIndex = 35;
+            this.showBtn.TabStop = false;
+            this.showBtn.Click += new System.EventHandler(this.showBtn_Click);
+            // 
             // NewWorkerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(328, 301);
+            this.ClientSize = new System.Drawing.Size(340, 301);
             this.Controls.Add(this.groupBox1);
             this.Name = "NewWorkerForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -254,6 +411,17 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.moneyPerHourNumpicker)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.firstNameTT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.secondNameTT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.birthNumberTT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.workerPositionTT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userNameTT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.moneyPerHourTT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userPasswordTT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.workerStartTT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.birthNumberWarning)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userNameWarning)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.showBtn)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -279,5 +447,17 @@
         private System.Windows.Forms.ComboBox positionCB;
         private System.Windows.Forms.Button confirmBtn;
         private System.Windows.Forms.Button cancelBtn;
+        private System.Windows.Forms.PictureBox birthNumberTT;
+        private System.Windows.Forms.PictureBox secondNameTT;
+        private System.Windows.Forms.PictureBox firstNameTT;
+        private System.Windows.Forms.PictureBox workerStartTT;
+        private System.Windows.Forms.PictureBox userPasswordTT;
+        private System.Windows.Forms.PictureBox moneyPerHourTT;
+        private System.Windows.Forms.PictureBox userNameTT;
+        private System.Windows.Forms.PictureBox workerPositionTT;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.PictureBox userNameWarning;
+        private System.Windows.Forms.PictureBox birthNumberWarning;
+        private System.Windows.Forms.PictureBox showBtn;
     }
 }

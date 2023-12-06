@@ -28,37 +28,61 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewCarForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.spzWarning = new System.Windows.Forms.PictureBox();
+            this.vinWarning = new System.Windows.Forms.PictureBox();
+            this.ownerTT = new System.Windows.Forms.PictureBox();
+            this.pojistovnaTT = new System.Windows.Forms.PictureBox();
+            this.typeTT = new System.Windows.Forms.PictureBox();
+            this.spzTT = new System.Windows.Forms.PictureBox();
+            this.vinTT = new System.Windows.Forms.PictureBox();
             this.cancelBtn = new System.Windows.Forms.Button();
             this.confirmBtn = new System.Windows.Forms.Button();
             this.addOwnerBtn = new System.Windows.Forms.Button();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.ownerCB = new System.Windows.Forms.ComboBox();
+            this.pojistovnaCB = new System.Windows.Forms.ComboBox();
+            this.typeCB = new System.Windows.Forms.ComboBox();
+            this.createDateNS = new System.Windows.Forms.NumericUpDown();
+            this.spzTF = new System.Windows.Forms.TextBox();
+            this.vinTF = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spzWarning)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vinWarning)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ownerTT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pojistovnaTT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.typeTT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spzTT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vinTT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.createDateNS)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.spzWarning);
+            this.groupBox1.Controls.Add(this.vinWarning);
+            this.groupBox1.Controls.Add(this.ownerTT);
+            this.groupBox1.Controls.Add(this.pojistovnaTT);
+            this.groupBox1.Controls.Add(this.typeTT);
+            this.groupBox1.Controls.Add(this.spzTT);
+            this.groupBox1.Controls.Add(this.vinTT);
             this.groupBox1.Controls.Add(this.cancelBtn);
             this.groupBox1.Controls.Add(this.confirmBtn);
             this.groupBox1.Controls.Add(this.addOwnerBtn);
-            this.groupBox1.Controls.Add(this.comboBox3);
-            this.groupBox1.Controls.Add(this.comboBox2);
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.numericUpDown1);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.ownerCB);
+            this.groupBox1.Controls.Add(this.pojistovnaCB);
+            this.groupBox1.Controls.Add(this.typeCB);
+            this.groupBox1.Controls.Add(this.createDateNS);
+            this.groupBox1.Controls.Add(this.spzTF);
+            this.groupBox1.Controls.Add(this.vinTF);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
@@ -67,96 +91,176 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(365, 239);
+            this.groupBox1.Size = new System.Drawing.Size(384, 239);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
+            // spzWarning
+            // 
+            this.spzWarning.Image = ((System.Drawing.Image)(resources.GetObject("spzWarning.Image")));
+            this.spzWarning.Location = new System.Drawing.Point(273, 45);
+            this.spzWarning.Name = "spzWarning";
+            this.spzWarning.Size = new System.Drawing.Size(16, 16);
+            this.spzWarning.TabIndex = 25;
+            this.spzWarning.TabStop = false;
+            this.toolTip1.SetToolTip(this.spzWarning, "SPZ není jedinečná!");
+            this.spzWarning.Visible = false;
+            // 
+            // vinWarning
+            // 
+            this.vinWarning.Image = ((System.Drawing.Image)(resources.GetObject("vinWarning.Image")));
+            this.vinWarning.Location = new System.Drawing.Point(273, 19);
+            this.vinWarning.Name = "vinWarning";
+            this.vinWarning.Size = new System.Drawing.Size(16, 16);
+            this.vinWarning.TabIndex = 24;
+            this.vinWarning.TabStop = false;
+            this.toolTip1.SetToolTip(this.vinWarning, "VIN není jedinečný!");
+            this.vinWarning.Visible = false;
+            // 
+            // ownerTT
+            // 
+            this.ownerTT.Image = ((System.Drawing.Image)(resources.GetObject("ownerTT.Image")));
+            this.ownerTT.Location = new System.Drawing.Point(251, 155);
+            this.ownerTT.Name = "ownerTT";
+            this.ownerTT.Size = new System.Drawing.Size(16, 16);
+            this.ownerTT.TabIndex = 22;
+            this.ownerTT.TabStop = false;
+            this.toolTip1.SetToolTip(this.ownerTT, "Pole musí být vyplněné!");
+            this.ownerTT.Visible = false;
+            // 
+            // pojistovnaTT
+            // 
+            this.pojistovnaTT.Image = ((System.Drawing.Image)(resources.GetObject("pojistovnaTT.Image")));
+            this.pojistovnaTT.Location = new System.Drawing.Point(251, 127);
+            this.pojistovnaTT.Name = "pojistovnaTT";
+            this.pojistovnaTT.Size = new System.Drawing.Size(16, 16);
+            this.pojistovnaTT.TabIndex = 21;
+            this.pojistovnaTT.TabStop = false;
+            this.toolTip1.SetToolTip(this.pojistovnaTT, "Pole musí být vyplněné!");
+            this.pojistovnaTT.Visible = false;
+            // 
+            // typeTT
+            // 
+            this.typeTT.Image = ((System.Drawing.Image)(resources.GetObject("typeTT.Image")));
+            this.typeTT.Location = new System.Drawing.Point(251, 99);
+            this.typeTT.Name = "typeTT";
+            this.typeTT.Size = new System.Drawing.Size(16, 16);
+            this.typeTT.TabIndex = 20;
+            this.typeTT.TabStop = false;
+            this.toolTip1.SetToolTip(this.typeTT, "Pole musí být vyplněné!");
+            this.typeTT.Visible = false;
+            // 
+            // spzTT
+            // 
+            this.spzTT.Image = ((System.Drawing.Image)(resources.GetObject("spzTT.Image")));
+            this.spzTT.Location = new System.Drawing.Point(251, 45);
+            this.spzTT.Name = "spzTT";
+            this.spzTT.Size = new System.Drawing.Size(16, 16);
+            this.spzTT.TabIndex = 18;
+            this.spzTT.TabStop = false;
+            this.toolTip1.SetToolTip(this.spzTT, "Pole musí být vyplněné!");
+            this.spzTT.Visible = false;
+            // 
+            // vinTT
+            // 
+            this.vinTT.Image = ((System.Drawing.Image)(resources.GetObject("vinTT.Image")));
+            this.vinTT.Location = new System.Drawing.Point(251, 19);
+            this.vinTT.Name = "vinTT";
+            this.vinTT.Size = new System.Drawing.Size(16, 16);
+            this.vinTT.TabIndex = 17;
+            this.vinTT.TabStop = false;
+            this.toolTip1.SetToolTip(this.vinTT, "Pole musí být vyplněné!");
+            this.vinTT.Visible = false;
+            // 
             // cancelBtn
             // 
-            this.cancelBtn.Location = new System.Drawing.Point(9, 183);
+            this.cancelBtn.Location = new System.Drawing.Point(9, 197);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(75, 23);
             this.cancelBtn.TabIndex = 14;
             this.cancelBtn.Text = "Zrušit";
             this.cancelBtn.UseVisualStyleBackColor = true;
+            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
             // 
             // confirmBtn
             // 
-            this.confirmBtn.Location = new System.Drawing.Point(169, 183);
+            this.confirmBtn.Location = new System.Drawing.Point(289, 197);
             this.confirmBtn.Name = "confirmBtn";
             this.confirmBtn.Size = new System.Drawing.Size(75, 23);
             this.confirmBtn.TabIndex = 13;
             this.confirmBtn.Text = "Přidat";
             this.confirmBtn.UseVisualStyleBackColor = true;
+            this.confirmBtn.Click += new System.EventHandler(this.confirmBtn_Click);
             // 
             // addOwnerBtn
             // 
-            this.addOwnerBtn.Location = new System.Drawing.Point(253, 155);
+            this.addOwnerBtn.Location = new System.Drawing.Point(273, 153);
             this.addOwnerBtn.Name = "addOwnerBtn";
             this.addOwnerBtn.Size = new System.Drawing.Size(91, 23);
             this.addOwnerBtn.TabIndex = 12;
             this.addOwnerBtn.Text = "Přidat majitele";
             this.addOwnerBtn.UseVisualStyleBackColor = true;
+            this.addOwnerBtn.Click += new System.EventHandler(this.addOwnerBtn_Click);
             // 
-            // comboBox3
+            // ownerCB
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(125, 155);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 21);
-            this.comboBox3.TabIndex = 11;
+            this.ownerCB.FormattingEnabled = true;
+            this.ownerCB.Location = new System.Drawing.Point(125, 155);
+            this.ownerCB.Name = "ownerCB";
+            this.ownerCB.Size = new System.Drawing.Size(121, 21);
+            this.ownerCB.TabIndex = 11;
             // 
-            // comboBox2
+            // pojistovnaCB
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(125, 127);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 10;
+            this.pojistovnaCB.FormattingEnabled = true;
+            this.pojistovnaCB.Location = new System.Drawing.Point(125, 127);
+            this.pojistovnaCB.Name = "pojistovnaCB";
+            this.pojistovnaCB.Size = new System.Drawing.Size(121, 21);
+            this.pojistovnaCB.TabIndex = 10;
             // 
-            // comboBox1
+            // typeCB
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(125, 99);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 9;
+            this.typeCB.FormattingEnabled = true;
+            this.typeCB.Location = new System.Drawing.Point(125, 99);
+            this.typeCB.Name = "typeCB";
+            this.typeCB.Size = new System.Drawing.Size(121, 21);
+            this.typeCB.TabIndex = 9;
             // 
-            // numericUpDown1
+            // createDateNS
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(125, 72);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
+            this.createDateNS.Location = new System.Drawing.Point(125, 72);
+            this.createDateNS.Maximum = new decimal(new int[] {
             2023,
             0,
             0,
             0});
-            this.numericUpDown1.Minimum = new decimal(new int[] {
+            this.createDateNS.Minimum = new decimal(new int[] {
             1886,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown1.TabIndex = 8;
-            this.numericUpDown1.Value = new decimal(new int[] {
+            this.createDateNS.Name = "createDateNS";
+            this.createDateNS.Size = new System.Drawing.Size(120, 20);
+            this.createDateNS.TabIndex = 8;
+            this.createDateNS.Value = new decimal(new int[] {
             2003,
             0,
             0,
             0});
             // 
-            // textBox2
+            // spzTF
             // 
-            this.textBox2.Location = new System.Drawing.Point(125, 45);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(120, 20);
-            this.textBox2.TabIndex = 7;
+            this.spzTF.Location = new System.Drawing.Point(125, 45);
+            this.spzTF.Name = "spzTF";
+            this.spzTF.Size = new System.Drawing.Size(120, 20);
+            this.spzTF.TabIndex = 7;
             // 
-            // textBox1
+            // vinTF
             // 
-            this.textBox1.Location = new System.Drawing.Point(125, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(120, 20);
-            this.textBox1.TabIndex = 6;
+            this.vinTF.Location = new System.Drawing.Point(125, 19);
+            this.vinTF.Name = "vinTF";
+            this.vinTF.Size = new System.Drawing.Size(120, 20);
+            this.vinTF.TabIndex = 6;
             // 
             // label6
             // 
@@ -216,14 +320,21 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(389, 263);
+            this.ClientSize = new System.Drawing.Size(408, 263);
             this.Controls.Add(this.groupBox1);
             this.Name = "NewCarForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Nový automobil";
+            this.Text = " ";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spzWarning)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vinWarning)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ownerTT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pojistovnaTT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.typeTT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spzTT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vinTT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.createDateNS)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -234,17 +345,25 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button addOwnerBtn;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox ownerCB;
+        private System.Windows.Forms.ComboBox pojistovnaCB;
+        private System.Windows.Forms.ComboBox typeCB;
+        private System.Windows.Forms.NumericUpDown createDateNS;
+        private System.Windows.Forms.TextBox spzTF;
+        private System.Windows.Forms.TextBox vinTF;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button cancelBtn;
         private System.Windows.Forms.Button confirmBtn;
+        private System.Windows.Forms.PictureBox spzTT;
+        private System.Windows.Forms.PictureBox vinTT;
+        private System.Windows.Forms.PictureBox ownerTT;
+        private System.Windows.Forms.PictureBox pojistovnaTT;
+        private System.Windows.Forms.PictureBox typeTT;
+        private System.Windows.Forms.PictureBox spzWarning;
+        private System.Windows.Forms.PictureBox vinWarning;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
