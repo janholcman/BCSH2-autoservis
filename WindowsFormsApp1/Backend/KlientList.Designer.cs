@@ -37,18 +37,21 @@
             this.userInfoBtn = new System.Windows.Forms.Button();
             this.logoutBtn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.addKlientBtn = new System.Windows.Forms.Button();
+            this.KlientDataGrid = new System.Windows.Forms.DataGridView();
+            this.login = new System.Windows.Forms.DataGridViewButtonColumn();
             this.zakaznikBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.database1DataSet4 = new WindowsFormsApp1.Database1DataSet4();
             this.zakaznikTableAdapter = new WindowsFormsApp1.Database1DataSet4TableAdapters.zakaznikTableAdapter();
-            this.addKlientBtn = new System.Windows.Forms.Button();
-            this.idzakaznikDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jmenozakaznikDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prijmenizakaznikDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mySqlDataAdapter1 = new MySql.Data.MySqlClient.MySqlDataAdapter();
+            this.refreshBtn = new System.Windows.Forms.Button();
+            this.mySqlDataAdapter2 = new MySql.Data.MySqlClient.MySqlDataAdapter();
             this.jmenofirmyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.login = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.prijmenizakaznikDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jmenozakaznikDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idzakaznikDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.KlientDataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.zakaznikBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet4)).BeginInit();
             this.SuspendLayout();
@@ -125,8 +128,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.refreshBtn);
             this.groupBox1.Controls.Add(this.addKlientBtn);
-            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Controls.Add(this.KlientDataGrid);
             this.groupBox1.Location = new System.Drawing.Point(12, 42);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(776, 396);
@@ -134,21 +138,39 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Seznam zákazníků";
             // 
-            // dataGridView1
+            // addKlientBtn
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.addKlientBtn.Location = new System.Drawing.Point(626, 20);
+            this.addKlientBtn.Name = "addKlientBtn";
+            this.addKlientBtn.Size = new System.Drawing.Size(144, 23);
+            this.addKlientBtn.TabIndex = 1;
+            this.addKlientBtn.Text = "Přidat zákazníka";
+            this.addKlientBtn.UseVisualStyleBackColor = true;
+            this.addKlientBtn.Click += new System.EventHandler(this.addKlientBtn_Click);
+            // 
+            // KlientDataGrid
+            // 
+            this.KlientDataGrid.AutoGenerateColumns = false;
+            this.KlientDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.KlientDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idzakaznikDataGridViewTextBoxColumn,
             this.jmenozakaznikDataGridViewTextBoxColumn,
             this.prijmenizakaznikDataGridViewTextBoxColumn,
             this.jmenofirmyDataGridViewTextBoxColumn,
             this.login});
-            this.dataGridView1.DataSource = this.zakaznikBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(7, 20);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(612, 370);
-            this.dataGridView1.TabIndex = 0;
+            this.KlientDataGrid.DataSource = this.zakaznikBindingSource;
+            this.KlientDataGrid.Location = new System.Drawing.Point(7, 20);
+            this.KlientDataGrid.Name = "KlientDataGrid";
+            this.KlientDataGrid.Size = new System.Drawing.Size(612, 370);
+            this.KlientDataGrid.TabIndex = 0;
+            // 
+            // login
+            // 
+            this.login.HeaderText = "Přihlášení";
+            this.login.Name = "login";
+            this.login.Text = "Přihlášení";
+            this.login.ToolTipText = "Přihlášení";
+            this.login.UseColumnTextForButtonValue = true;
             // 
             // zakaznikBindingSource
             // 
@@ -164,36 +186,29 @@
             // 
             this.zakaznikTableAdapter.ClearBeforeFill = true;
             // 
-            // addKlientBtn
+            // mySqlDataAdapter1
             // 
-            this.addKlientBtn.Location = new System.Drawing.Point(626, 20);
-            this.addKlientBtn.Name = "addKlientBtn";
-            this.addKlientBtn.Size = new System.Drawing.Size(144, 23);
-            this.addKlientBtn.TabIndex = 1;
-            this.addKlientBtn.Text = "Přidat zákazníka";
-            this.addKlientBtn.UseVisualStyleBackColor = true;
-            this.addKlientBtn.Click += new System.EventHandler(this.addKlientBtn_Click);
+            this.mySqlDataAdapter1.DeleteCommand = null;
+            this.mySqlDataAdapter1.InsertCommand = null;
+            this.mySqlDataAdapter1.SelectCommand = null;
+            this.mySqlDataAdapter1.UpdateCommand = null;
             // 
-            // idzakaznikDataGridViewTextBoxColumn
+            // refreshBtn
             // 
-            this.idzakaznikDataGridViewTextBoxColumn.DataPropertyName = "idzakaznik";
-            this.idzakaznikDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.idzakaznikDataGridViewTextBoxColumn.Name = "idzakaznikDataGridViewTextBoxColumn";
-            this.idzakaznikDataGridViewTextBoxColumn.ReadOnly = true;
+            this.refreshBtn.Location = new System.Drawing.Point(626, 50);
+            this.refreshBtn.Name = "refreshBtn";
+            this.refreshBtn.Size = new System.Drawing.Size(144, 23);
+            this.refreshBtn.TabIndex = 2;
+            this.refreshBtn.Text = "Znovu načíst seznam";
+            this.refreshBtn.UseVisualStyleBackColor = true;
+            this.refreshBtn.Click += new System.EventHandler(this.refreshBtn_Click);
             // 
-            // jmenozakaznikDataGridViewTextBoxColumn
+            // mySqlDataAdapter2
             // 
-            this.jmenozakaznikDataGridViewTextBoxColumn.DataPropertyName = "jmeno_zakaznik";
-            this.jmenozakaznikDataGridViewTextBoxColumn.HeaderText = "Jméno";
-            this.jmenozakaznikDataGridViewTextBoxColumn.Name = "jmenozakaznikDataGridViewTextBoxColumn";
-            this.jmenozakaznikDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // prijmenizakaznikDataGridViewTextBoxColumn
-            // 
-            this.prijmenizakaznikDataGridViewTextBoxColumn.DataPropertyName = "prijmeni_zakaznik";
-            this.prijmenizakaznikDataGridViewTextBoxColumn.HeaderText = "Příjmení";
-            this.prijmenizakaznikDataGridViewTextBoxColumn.Name = "prijmenizakaznikDataGridViewTextBoxColumn";
-            this.prijmenizakaznikDataGridViewTextBoxColumn.ReadOnly = true;
+            this.mySqlDataAdapter2.DeleteCommand = null;
+            this.mySqlDataAdapter2.InsertCommand = null;
+            this.mySqlDataAdapter2.SelectCommand = null;
+            this.mySqlDataAdapter2.UpdateCommand = null;
             // 
             // jmenofirmyDataGridViewTextBoxColumn
             // 
@@ -202,13 +217,26 @@
             this.jmenofirmyDataGridViewTextBoxColumn.Name = "jmenofirmyDataGridViewTextBoxColumn";
             this.jmenofirmyDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // login
+            // prijmenizakaznikDataGridViewTextBoxColumn
             // 
-            this.login.HeaderText = "Přihlášení";
-            this.login.Name = "login";
-            this.login.Text = "Přihlášení";
-            this.login.ToolTipText = "Přihlášení";
-            this.login.UseColumnTextForButtonValue = true;
+            this.prijmenizakaznikDataGridViewTextBoxColumn.DataPropertyName = "prijmeni_zakaznik";
+            this.prijmenizakaznikDataGridViewTextBoxColumn.HeaderText = "Příjmení";
+            this.prijmenizakaznikDataGridViewTextBoxColumn.Name = "prijmenizakaznikDataGridViewTextBoxColumn";
+            this.prijmenizakaznikDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // jmenozakaznikDataGridViewTextBoxColumn
+            // 
+            this.jmenozakaznikDataGridViewTextBoxColumn.DataPropertyName = "jmeno_zakaznik";
+            this.jmenozakaznikDataGridViewTextBoxColumn.HeaderText = "Jméno";
+            this.jmenozakaznikDataGridViewTextBoxColumn.Name = "jmenozakaznikDataGridViewTextBoxColumn";
+            this.jmenozakaznikDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // idzakaznikDataGridViewTextBoxColumn
+            // 
+            this.idzakaznikDataGridViewTextBoxColumn.DataPropertyName = "idzakaznik";
+            this.idzakaznikDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.idzakaznikDataGridViewTextBoxColumn.Name = "idzakaznikDataGridViewTextBoxColumn";
+            this.idzakaznikDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // KlientList
             // 
@@ -228,7 +256,7 @@
             this.Text = "Zákazníci";
             this.Load += new System.EventHandler(this.KlientList_Load);
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.KlientDataGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.zakaznikBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet4)).EndInit();
             this.ResumeLayout(false);
@@ -245,15 +273,18 @@
         private System.Windows.Forms.Button userInfoBtn;
         private System.Windows.Forms.Button logoutBtn;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView KlientDataGrid;
         private Database1DataSet4 database1DataSet4;
         private System.Windows.Forms.BindingSource zakaznikBindingSource;
         private Database1DataSet4TableAdapters.zakaznikTableAdapter zakaznikTableAdapter;
         private System.Windows.Forms.Button addKlientBtn;
+        private System.Windows.Forms.DataGridViewButtonColumn login;
+        private MySql.Data.MySqlClient.MySqlDataAdapter mySqlDataAdapter1;
+        private System.Windows.Forms.Button refreshBtn;
+        private MySql.Data.MySqlClient.MySqlDataAdapter mySqlDataAdapter2;
         private System.Windows.Forms.DataGridViewTextBoxColumn idzakaznikDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn jmenozakaznikDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn prijmenizakaznikDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn jmenofirmyDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewButtonColumn login;
     }
 }

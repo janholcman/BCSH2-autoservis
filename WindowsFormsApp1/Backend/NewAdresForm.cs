@@ -7,13 +7,13 @@ namespace WindowsFormsApp1.Backend
 {
     public partial class NewAdresForm : Form
     {
-        NewKlientForm klientForm;
         SqlConnection conn;
+        NewKlientForm newKlienForm;
 
-        public NewAdresForm(NewKlientForm klientForm, SqlConnection conn)
+        public NewAdresForm(SqlConnection conn, NewKlientForm form)
         {
+            this.newKlienForm = form;
             InitializeComponent();
-            this.klientForm = klientForm;
             this.conn = conn;
         }
 
@@ -32,14 +32,8 @@ namespace WindowsFormsApp1.Backend
                 if (pscTF.Text == "") { pscTT.Visible = true; } else { pscTT.Visible = false; }
             } else
             {
-                //string city = cityTF.Text;
-                //string street = streetTF.Text;
-                //string houseNumber = houseNumberTF.Text;
-                //string pscTT = pscTF.Text;
-
                 SqlCommand cmd = new SqlCommand();
                 conn.Open();
-
 
                 cmd.Connection = conn;
                 cmd.CommandText = @"INSERT INTO adresa (mesto, ulice, cislo_popisne, psc) VALUES (@mesto, @ulice, @cislo_popisne, @psc)";
@@ -50,9 +44,10 @@ namespace WindowsFormsApp1.Backend
                 
                 cmd.ExecuteNonQuery();
                 conn.Close();
+                newKlienForm.resetAdresCB();
+                this.Close();
             }
-            this.Close();
-            klientForm.Refresh();
+            
         }
     }
 }

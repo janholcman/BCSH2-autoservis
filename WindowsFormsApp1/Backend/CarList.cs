@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using WindowsFormsApp1.Backend;
@@ -20,35 +21,35 @@ namespace WindowsFormsApp1
         {
             Account form = new Account(hmpForm, conn);
             form.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void contractListBtn_Click(object sender, EventArgs e)
         {
             ContractList form = new ContractList(hmpForm, conn);
             form.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void KlientListBtn_Click(object sender, EventArgs e)
         {
             KlientList form = new KlientList(hmpForm, conn);
             form.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void workerListBtn_Click(object sender, EventArgs e)
         {
             WorkerList form = new WorkerList(hmpForm, conn);
             form.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void enumEditBtn_Click(object sender, EventArgs e)
         {
             EnumEditor form = new EnumEditor(hmpForm, conn);
             form.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void logoutBtn_Click(object sender, EventArgs e)
@@ -66,9 +67,29 @@ namespace WindowsFormsApp1
 
         private void addCarBtn_Click(object sender, EventArgs e)
         {
-            NewCarForm form = new NewCarForm();
+            NewCarForm form = new NewCarForm(conn);
             form.Show();
             this.Refresh();
+        }
+
+        private void resetBtn_Click(object sender, EventArgs e)
+        {
+            carListDataGrid.DataSource = null;
+            loaddata();
+        }
+
+        private void loaddata()
+        {
+            conn.Open();
+
+            string query = "SELECT * FROM automobil";
+            SqlCommand cmd = new SqlCommand(query, conn);
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            carListDataGrid.DataSource = dt;
+
+            conn.Close();
         }
     }
 }

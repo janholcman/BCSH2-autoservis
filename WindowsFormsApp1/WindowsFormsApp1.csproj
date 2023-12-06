@@ -260,7 +260,7 @@
     <Compile Include="Objects\Zakazka.cs" />
     <Compile Include="Objects\Zakaznik.cs" />
     <Compile Include="Objects\Zamestnanec.cs" />
-    <Compile Include="Objects\Znacka.cs" />
+    <Compile Include="Objects\Model.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Backend\Account.resx">

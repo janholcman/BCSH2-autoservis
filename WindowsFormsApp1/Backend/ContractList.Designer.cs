@@ -37,7 +37,9 @@
             this.userInfoBtn = new System.Windows.Forms.Button();
             this.logoutBtn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.resetBtn = new System.Windows.Forms.Button();
+            this.addContractBtn = new System.Windows.Forms.Button();
+            this.contractDataGrid = new System.Windows.Forms.DataGridView();
             this.idzakazkaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.startzakazkyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.koneczakazkyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,9 +47,8 @@
             this.zakazkaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.database1DataSet1 = new WindowsFormsApp1.Database1DataSet1();
             this.zakazkaTableAdapter = new WindowsFormsApp1.Database1DataSet1TableAdapters.zakazkaTableAdapter();
-            this.addContractBtn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contractDataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.zakazkaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet1)).BeginInit();
             this.SuspendLayout();
@@ -124,8 +125,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.resetBtn);
             this.groupBox1.Controls.Add(this.addContractBtn);
-            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Controls.Add(this.contractDataGrid);
             this.groupBox1.Location = new System.Drawing.Point(13, 42);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(775, 396);
@@ -133,20 +135,40 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Seznam zakázek";
             // 
-            // dataGridView1
+            // resetBtn
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.resetBtn.Location = new System.Drawing.Point(625, 50);
+            this.resetBtn.Name = "resetBtn";
+            this.resetBtn.Size = new System.Drawing.Size(144, 23);
+            this.resetBtn.TabIndex = 2;
+            this.resetBtn.Text = "Znovu načíst seznam";
+            this.resetBtn.UseVisualStyleBackColor = true;
+            this.resetBtn.Click += new System.EventHandler(this.resetBtn_Click);
+            // 
+            // addContractBtn
+            // 
+            this.addContractBtn.Location = new System.Drawing.Point(625, 20);
+            this.addContractBtn.Name = "addContractBtn";
+            this.addContractBtn.Size = new System.Drawing.Size(144, 23);
+            this.addContractBtn.TabIndex = 1;
+            this.addContractBtn.Text = "Přidat zakázku";
+            this.addContractBtn.UseVisualStyleBackColor = true;
+            this.addContractBtn.Click += new System.EventHandler(this.addContractBtn_Click);
+            // 
+            // contractDataGrid
+            // 
+            this.contractDataGrid.AutoGenerateColumns = false;
+            this.contractDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.contractDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idzakazkaDataGridViewTextBoxColumn,
             this.startzakazkyDataGridViewTextBoxColumn,
             this.koneczakazkyDataGridViewTextBoxColumn,
             this.zamestnanecidzamestnanecDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.zakazkaBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(7, 19);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(611, 370);
-            this.dataGridView1.TabIndex = 0;
+            this.contractDataGrid.DataSource = this.zakazkaBindingSource;
+            this.contractDataGrid.Location = new System.Drawing.Point(7, 19);
+            this.contractDataGrid.Name = "contractDataGrid";
+            this.contractDataGrid.Size = new System.Drawing.Size(611, 370);
+            this.contractDataGrid.TabIndex = 0;
             // 
             // idzakazkaDataGridViewTextBoxColumn
             // 
@@ -190,15 +212,6 @@
             // 
             this.zakazkaTableAdapter.ClearBeforeFill = true;
             // 
-            // addContractBtn
-            // 
-            this.addContractBtn.Location = new System.Drawing.Point(625, 20);
-            this.addContractBtn.Name = "addContractBtn";
-            this.addContractBtn.Size = new System.Drawing.Size(144, 23);
-            this.addContractBtn.TabIndex = 1;
-            this.addContractBtn.Text = "Přidat zakázku";
-            this.addContractBtn.UseVisualStyleBackColor = true;
-            // 
             // ContractList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -217,7 +230,7 @@
             this.Text = "Zakázky";
             this.Load += new System.EventHandler(this.ContractList_Load);
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contractDataGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.zakazkaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet1)).EndInit();
             this.ResumeLayout(false);
@@ -234,7 +247,7 @@
         private System.Windows.Forms.Button userInfoBtn;
         private System.Windows.Forms.Button logoutBtn;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView contractDataGrid;
         private Database1DataSet1 database1DataSet1;
         private System.Windows.Forms.BindingSource zakazkaBindingSource;
         private Database1DataSet1TableAdapters.zakazkaTableAdapter zakazkaTableAdapter;
@@ -243,5 +256,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn koneczakazkyDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn zamestnanecidzamestnanecDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button addContractBtn;
+        private System.Windows.Forms.Button resetBtn;
     }
 }

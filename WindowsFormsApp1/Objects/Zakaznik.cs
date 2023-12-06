@@ -5,10 +5,10 @@ namespace GUI.Objects
     internal class Zakaznik
     {
         int Id { get; set; }
-        String Jmeno { get; set; }
-        String Prijmeni { get; set; }
-        String JmenoFirmy { get; set; }
-        Adresa Adresa { get; set; }
+        public String Jmeno { get; set; }
+        public String Prijmeni { get; set; }
+        public String JmenoFirmy { get; set; }
+        public Adresa Adresa { get; set; }
 
         public Zakaznik(int id, string jmeno, string prijmeni, string jmenoFirmy, Adresa adresa)
         {
@@ -25,6 +25,17 @@ namespace GUI.Objects
             Jmeno = jmeno;
             Prijmeni = prijmeni;
             Adresa = adresa;
+        }
+        public Zakaznik(string jmeno, string prijmeni, String JmenoFirmy = "")
+        {
+            this.Jmeno = jmeno;
+            this.Prijmeni = prijmeni;
+            this.JmenoFirmy = JmenoFirmy;
+        }
+
+        public override string ToString()
+        {
+            return Jmeno + " " + Prijmeni + " - " + JmenoFirmy;
         }
     }
 }
