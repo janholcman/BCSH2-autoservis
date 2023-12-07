@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Account));
             this.logoutBtn = new System.Windows.Forms.Button();
             this.userInfoBtn = new System.Windows.Forms.Button();
             this.contractListBtn = new System.Windows.Forms.Button();
@@ -38,23 +39,47 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.klientFirstNameLabel = new System.Windows.Forms.Label();
+            this.klientSecondNameLabel = new System.Windows.Forms.Label();
+            this.klientIdLabel = new System.Windows.Forms.Label();
+            this.klientUserNameLabel = new System.Windows.Forms.Label();
+            this.klientPasswordLabel = new System.Windows.Forms.Label();
+            this.klientGroupBox = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.groupBox1.SuspendLayout();
+            this.klientCompanyLabel = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.workerGroupBox = new System.Windows.Forms.GroupBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.startWorkLabel = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.workerMoneyLabel = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.positionLabel = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.workerIdLabel = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.workerSecondnameLabel = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.workerFirstNameLabel = new System.Windows.Forms.Label();
+            this.birthNumberLabel = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.workerPasswordLabel = new System.Windows.Forms.Label();
+            this.workerUserNameLabel = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.showPasswordKlient = new System.Windows.Forms.PictureBox();
+            this.showPasswordWorker = new System.Windows.Forms.PictureBox();
+            this.klientGroupBox.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.workerGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.showPasswordKlient)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.showPasswordWorker)).BeginInit();
             this.SuspendLayout();
             // 
             // logoutBtn
@@ -154,119 +179,101 @@
             this.label3.TabIndex = 9;
             this.label3.Text = "ID:";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(35, 119);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(42, 13);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Pozice:";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(36, 147);
+            this.label5.Location = new System.Drawing.Point(36, 150);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(84, 13);
+            this.label5.Size = new System.Drawing.Size(65, 13);
             this.label5.TabIndex = 11;
-            this.label5.Text = "Hodinová mzda:";
+            this.label5.Text = "Název účtu:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(36, 176);
+            this.label6.Location = new System.Drawing.Point(36, 179);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(82, 13);
+            this.label6.Size = new System.Drawing.Size(37, 13);
             this.label6.TabIndex = 12;
-            this.label6.Text = "Datum nástupu:";
+            this.label6.Text = "Heslo:";
             // 
-            // label7
+            // klientFirstNameLabel
             // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label7.Location = new System.Drawing.Point(144, 33);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(37, 15);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "label7";
+            this.klientFirstNameLabel.AutoSize = true;
+            this.klientFirstNameLabel.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.klientFirstNameLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.klientFirstNameLabel.Location = new System.Drawing.Point(144, 33);
+            this.klientFirstNameLabel.Name = "klientFirstNameLabel";
+            this.klientFirstNameLabel.Size = new System.Drawing.Size(37, 15);
+            this.klientFirstNameLabel.TabIndex = 13;
+            this.klientFirstNameLabel.Text = "label7";
             // 
-            // label8
+            // klientSecondNameLabel
             // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label8.Location = new System.Drawing.Point(144, 60);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(37, 15);
-            this.label8.TabIndex = 14;
-            this.label8.Text = "label8";
+            this.klientSecondNameLabel.AutoSize = true;
+            this.klientSecondNameLabel.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.klientSecondNameLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.klientSecondNameLabel.Location = new System.Drawing.Point(144, 60);
+            this.klientSecondNameLabel.Name = "klientSecondNameLabel";
+            this.klientSecondNameLabel.Size = new System.Drawing.Size(37, 15);
+            this.klientSecondNameLabel.TabIndex = 14;
+            this.klientSecondNameLabel.Text = "label8";
             // 
-            // label9
+            // klientIdLabel
             // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label9.Location = new System.Drawing.Point(144, 91);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(37, 15);
-            this.label9.TabIndex = 15;
-            this.label9.Text = "label9";
+            this.klientIdLabel.AutoSize = true;
+            this.klientIdLabel.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.klientIdLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.klientIdLabel.Location = new System.Drawing.Point(144, 91);
+            this.klientIdLabel.Name = "klientIdLabel";
+            this.klientIdLabel.Size = new System.Drawing.Size(37, 15);
+            this.klientIdLabel.TabIndex = 15;
+            this.klientIdLabel.Text = "label9";
             // 
-            // label10
+            // klientUserNameLabel
             // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label10.Location = new System.Drawing.Point(144, 118);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(43, 15);
-            this.label10.TabIndex = 16;
-            this.label10.Text = "label10";
+            this.klientUserNameLabel.AutoSize = true;
+            this.klientUserNameLabel.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.klientUserNameLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.klientUserNameLabel.Location = new System.Drawing.Point(144, 147);
+            this.klientUserNameLabel.Name = "klientUserNameLabel";
+            this.klientUserNameLabel.Size = new System.Drawing.Size(43, 15);
+            this.klientUserNameLabel.TabIndex = 17;
+            this.klientUserNameLabel.Text = "label11";
             // 
-            // label11
+            // klientPasswordLabel
             // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label11.Location = new System.Drawing.Point(144, 144);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(43, 15);
-            this.label11.TabIndex = 17;
-            this.label11.Text = "label11";
+            this.klientPasswordLabel.AutoSize = true;
+            this.klientPasswordLabel.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.klientPasswordLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.klientPasswordLabel.Location = new System.Drawing.Point(144, 178);
+            this.klientPasswordLabel.Name = "klientPasswordLabel";
+            this.klientPasswordLabel.Size = new System.Drawing.Size(43, 15);
+            this.klientPasswordLabel.TabIndex = 18;
+            this.klientPasswordLabel.Text = "label12";
+            this.klientPasswordLabel.Visible = false;
             // 
-            // label12
+            // klientGroupBox
             // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label12.Location = new System.Drawing.Point(144, 175);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(43, 15);
-            this.label12.TabIndex = 18;
-            this.label12.Text = "label12";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Location = new System.Drawing.Point(13, 62);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(290, 227);
-            this.groupBox1.TabIndex = 19;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Uživatelské informace";
+            this.klientGroupBox.Controls.Add(this.showPasswordKlient);
+            this.klientGroupBox.Controls.Add(this.klientCompanyLabel);
+            this.klientGroupBox.Controls.Add(this.label8);
+            this.klientGroupBox.Controls.Add(this.label1);
+            this.klientGroupBox.Controls.Add(this.klientPasswordLabel);
+            this.klientGroupBox.Controls.Add(this.label2);
+            this.klientGroupBox.Controls.Add(this.klientUserNameLabel);
+            this.klientGroupBox.Controls.Add(this.label3);
+            this.klientGroupBox.Controls.Add(this.klientIdLabel);
+            this.klientGroupBox.Controls.Add(this.label5);
+            this.klientGroupBox.Controls.Add(this.klientSecondNameLabel);
+            this.klientGroupBox.Controls.Add(this.label6);
+            this.klientGroupBox.Controls.Add(this.klientFirstNameLabel);
+            this.klientGroupBox.Location = new System.Drawing.Point(13, 62);
+            this.klientGroupBox.Name = "klientGroupBox";
+            this.klientGroupBox.Size = new System.Drawing.Size(290, 227);
+            this.klientGroupBox.TabIndex = 19;
+            this.klientGroupBox.TabStop = false;
+            this.klientGroupBox.Text = "Uživatelské informace";
             // 
             // textBox1
             // 
@@ -314,14 +321,266 @@
             this.textBox2.Text = "ANO";
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // klientCompanyLabel
+            // 
+            this.klientCompanyLabel.AutoSize = true;
+            this.klientCompanyLabel.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.klientCompanyLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.klientCompanyLabel.Location = new System.Drawing.Point(144, 118);
+            this.klientCompanyLabel.Name = "klientCompanyLabel";
+            this.klientCompanyLabel.Size = new System.Drawing.Size(43, 15);
+            this.klientCompanyLabel.TabIndex = 20;
+            this.klientCompanyLabel.Text = "label12";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(36, 119);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(35, 13);
+            this.label8.TabIndex = 19;
+            this.label8.Text = "Firma:";
+            // 
+            // workerGroupBox
+            // 
+            this.workerGroupBox.Controls.Add(this.showPasswordWorker);
+            this.workerGroupBox.Controls.Add(this.workerPasswordLabel);
+            this.workerGroupBox.Controls.Add(this.birthNumberLabel);
+            this.workerGroupBox.Controls.Add(this.workerUserNameLabel);
+            this.workerGroupBox.Controls.Add(this.label7);
+            this.workerGroupBox.Controls.Add(this.label11);
+            this.workerGroupBox.Controls.Add(this.label13);
+            this.workerGroupBox.Controls.Add(this.label10);
+            this.workerGroupBox.Controls.Add(this.startWorkLabel);
+            this.workerGroupBox.Controls.Add(this.label12);
+            this.workerGroupBox.Controls.Add(this.workerMoneyLabel);
+            this.workerGroupBox.Controls.Add(this.label14);
+            this.workerGroupBox.Controls.Add(this.positionLabel);
+            this.workerGroupBox.Controls.Add(this.label16);
+            this.workerGroupBox.Controls.Add(this.workerIdLabel);
+            this.workerGroupBox.Controls.Add(this.label18);
+            this.workerGroupBox.Controls.Add(this.workerSecondnameLabel);
+            this.workerGroupBox.Controls.Add(this.label20);
+            this.workerGroupBox.Controls.Add(this.workerFirstNameLabel);
+            this.workerGroupBox.Location = new System.Drawing.Point(12, 62);
+            this.workerGroupBox.Name = "workerGroupBox";
+            this.workerGroupBox.Size = new System.Drawing.Size(290, 299);
+            this.workerGroupBox.TabIndex = 21;
+            this.workerGroupBox.TabStop = false;
+            this.workerGroupBox.Text = "Uživatelské informace";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(36, 35);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(41, 13);
+            this.label10.TabIndex = 7;
+            this.label10.Text = "Jméno:";
+            // 
+            // startWorkLabel
+            // 
+            this.startWorkLabel.AutoSize = true;
+            this.startWorkLabel.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.startWorkLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.startWorkLabel.Location = new System.Drawing.Point(144, 175);
+            this.startWorkLabel.Name = "startWorkLabel";
+            this.startWorkLabel.Size = new System.Drawing.Size(43, 15);
+            this.startWorkLabel.TabIndex = 18;
+            this.startWorkLabel.Text = "label12";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(36, 61);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(48, 13);
+            this.label12.TabIndex = 8;
+            this.label12.Text = "Příjmení";
+            // 
+            // workerMoneyLabel
+            // 
+            this.workerMoneyLabel.AutoSize = true;
+            this.workerMoneyLabel.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.workerMoneyLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.workerMoneyLabel.Location = new System.Drawing.Point(144, 144);
+            this.workerMoneyLabel.Name = "workerMoneyLabel";
+            this.workerMoneyLabel.Size = new System.Drawing.Size(43, 15);
+            this.workerMoneyLabel.TabIndex = 17;
+            this.workerMoneyLabel.Text = "label11";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(36, 92);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(21, 13);
+            this.label14.TabIndex = 9;
+            this.label14.Text = "ID:";
+            // 
+            // positionLabel
+            // 
+            this.positionLabel.AutoSize = true;
+            this.positionLabel.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.positionLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.positionLabel.Location = new System.Drawing.Point(144, 118);
+            this.positionLabel.Name = "positionLabel";
+            this.positionLabel.Size = new System.Drawing.Size(43, 15);
+            this.positionLabel.TabIndex = 16;
+            this.positionLabel.Text = "label10";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(35, 119);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(42, 13);
+            this.label16.TabIndex = 10;
+            this.label16.Text = "Pozice:";
+            // 
+            // workerIdLabel
+            // 
+            this.workerIdLabel.AutoSize = true;
+            this.workerIdLabel.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.workerIdLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.workerIdLabel.Location = new System.Drawing.Point(144, 91);
+            this.workerIdLabel.Name = "workerIdLabel";
+            this.workerIdLabel.Size = new System.Drawing.Size(37, 15);
+            this.workerIdLabel.TabIndex = 15;
+            this.workerIdLabel.Text = "label9";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(36, 147);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(84, 13);
+            this.label18.TabIndex = 11;
+            this.label18.Text = "Hodinová mzda:";
+            // 
+            // workerSecondnameLabel
+            // 
+            this.workerSecondnameLabel.AutoSize = true;
+            this.workerSecondnameLabel.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.workerSecondnameLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.workerSecondnameLabel.Location = new System.Drawing.Point(144, 60);
+            this.workerSecondnameLabel.Name = "workerSecondnameLabel";
+            this.workerSecondnameLabel.Size = new System.Drawing.Size(37, 15);
+            this.workerSecondnameLabel.TabIndex = 14;
+            this.workerSecondnameLabel.Text = "label8";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(36, 176);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(82, 13);
+            this.label20.TabIndex = 12;
+            this.label20.Text = "Datum nástupu:";
+            // 
+            // workerFirstNameLabel
+            // 
+            this.workerFirstNameLabel.AutoSize = true;
+            this.workerFirstNameLabel.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.workerFirstNameLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.workerFirstNameLabel.Location = new System.Drawing.Point(144, 33);
+            this.workerFirstNameLabel.Name = "workerFirstNameLabel";
+            this.workerFirstNameLabel.Size = new System.Drawing.Size(37, 15);
+            this.workerFirstNameLabel.TabIndex = 13;
+            this.workerFirstNameLabel.Text = "label7";
+            // 
+            // birthNumberLabel
+            // 
+            this.birthNumberLabel.AutoSize = true;
+            this.birthNumberLabel.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.birthNumberLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.birthNumberLabel.Location = new System.Drawing.Point(144, 202);
+            this.birthNumberLabel.Name = "birthNumberLabel";
+            this.birthNumberLabel.Size = new System.Drawing.Size(43, 15);
+            this.birthNumberLabel.TabIndex = 20;
+            this.birthNumberLabel.Text = "label12";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(36, 203);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(68, 13);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "Rodné číslo:";
+            // 
+            // workerPasswordLabel
+            // 
+            this.workerPasswordLabel.AutoSize = true;
+            this.workerPasswordLabel.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.workerPasswordLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.workerPasswordLabel.Location = new System.Drawing.Point(144, 255);
+            this.workerPasswordLabel.Name = "workerPasswordLabel";
+            this.workerPasswordLabel.Size = new System.Drawing.Size(43, 15);
+            this.workerPasswordLabel.TabIndex = 24;
+            this.workerPasswordLabel.Text = "label12";
+            this.workerPasswordLabel.Visible = false;
+            // 
+            // workerUserNameLabel
+            // 
+            this.workerUserNameLabel.AutoSize = true;
+            this.workerUserNameLabel.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.workerUserNameLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.workerUserNameLabel.Location = new System.Drawing.Point(144, 228);
+            this.workerUserNameLabel.Name = "workerUserNameLabel";
+            this.workerUserNameLabel.Size = new System.Drawing.Size(43, 15);
+            this.workerUserNameLabel.TabIndex = 23;
+            this.workerUserNameLabel.Text = "label11";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(36, 231);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(65, 13);
+            this.label11.TabIndex = 21;
+            this.label11.Text = "Název účtu:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(36, 256);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(37, 13);
+            this.label13.TabIndex = 22;
+            this.label13.Text = "Heslo:";
+            // 
+            // showPasswordKlient
+            // 
+            this.showPasswordKlient.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.showPasswordKlient.Image = ((System.Drawing.Image)(resources.GetObject("showPasswordKlient.Image")));
+            this.showPasswordKlient.Location = new System.Drawing.Point(112, 178);
+            this.showPasswordKlient.Name = "showPasswordKlient";
+            this.showPasswordKlient.Size = new System.Drawing.Size(16, 16);
+            this.showPasswordKlient.TabIndex = 23;
+            this.showPasswordKlient.TabStop = false;
+            this.showPasswordKlient.Click += new System.EventHandler(this.showPasswordKlient_Click);
+            // 
+            // showPasswordWorker
+            // 
+            this.showPasswordWorker.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.showPasswordWorker.Image = ((System.Drawing.Image)(resources.GetObject("showPasswordWorker.Image")));
+            this.showPasswordWorker.Location = new System.Drawing.Point(104, 255);
+            this.showPasswordWorker.Name = "showPasswordWorker";
+            this.showPasswordWorker.Size = new System.Drawing.Size(16, 16);
+            this.showPasswordWorker.TabIndex = 23;
+            this.showPasswordWorker.TabStop = false;
+            this.showPasswordWorker.Click += new System.EventHandler(this.showPasswordWorker_Click);
+            // 
             // Account
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 373);
+            this.Controls.Add(this.workerGroupBox);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.klientGroupBox);
             this.Controls.Add(this.enumEditBtn);
             this.Controls.Add(this.workerListBtn);
             this.Controls.Add(this.KlientListBtn);
@@ -332,12 +591,16 @@
             this.Name = "Account";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Účet";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.klientGroupBox.ResumeLayout(false);
+            this.klientGroupBox.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.workerGroupBox.ResumeLayout(false);
+            this.workerGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.showPasswordKlient)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.showPasswordWorker)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -354,19 +617,40 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label klientFirstNameLabel;
+        private System.Windows.Forms.Label klientSecondNameLabel;
+        private System.Windows.Forms.Label klientIdLabel;
+        private System.Windows.Forms.Label klientUserNameLabel;
+        private System.Windows.Forms.Label klientPasswordLabel;
+        private System.Windows.Forms.GroupBox klientGroupBox;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label klientCompanyLabel;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.GroupBox workerGroupBox;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label startWorkLabel;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label workerMoneyLabel;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label positionLabel;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label workerIdLabel;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label workerSecondnameLabel;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label workerFirstNameLabel;
+        private System.Windows.Forms.Label workerPasswordLabel;
+        private System.Windows.Forms.Label birthNumberLabel;
+        private System.Windows.Forms.Label workerUserNameLabel;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.PictureBox showPasswordWorker;
+        private System.Windows.Forms.PictureBox showPasswordKlient;
     }
 }

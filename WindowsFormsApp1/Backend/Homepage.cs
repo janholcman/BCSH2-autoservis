@@ -35,10 +35,8 @@ namespace WindowsFormsApp1
                 MessageBox.Show(es.Message);
             }
 
-            using (LoginForm loginForm = new LoginForm(this, conn))
-            {
-                loginForm.ShowDialog();
-            }
+            LoginForm form = new LoginForm(this, conn);
+            form.Show();
         }
     }
 }

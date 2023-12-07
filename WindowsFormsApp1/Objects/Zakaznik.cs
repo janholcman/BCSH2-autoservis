@@ -2,29 +2,42 @@
 
 namespace GUI.Objects
 {
-    internal class Zakaznik
+    public class Zakaznik
     {
-        int Id { get; set; }
+        public int Id { get; set; }
         public String Jmeno { get; set; }
         public String Prijmeni { get; set; }
         public String JmenoFirmy { get; set; }
-        public Adresa Adresa { get; set; }
+        public int Idadresa { get; set; }
+        public String NazevUctu { get; set; }
+        public String Heslo { get; set; }
 
-        public Zakaznik(int id, string jmeno, string prijmeni, string jmenoFirmy, Adresa adresa)
+        public Zakaznik(int id, string jmeno, string prijmeni, string jmenoFirmy, int adresa, string nazevUctu, string heslo)
         {
             Id = id;
             Jmeno = jmeno;
             Prijmeni = prijmeni;
             JmenoFirmy = jmenoFirmy;
-            Adresa = adresa;
+            Idadresa = adresa;
+            NazevUctu = nazevUctu;
+            Heslo = heslo;
         }
 
-        public Zakaznik(int id, string jmeno, string prijmeni, Adresa adresa)
+        public Zakaznik(int id, string jmeno, string prijmeni, string jmenoFirmy, int adresa)
         {
             Id = id;
             Jmeno = jmeno;
             Prijmeni = prijmeni;
-            Adresa = adresa;
+            JmenoFirmy = jmenoFirmy;
+            Idadresa = adresa;
+        }
+
+        public Zakaznik(int id, string jmeno, string prijmeni, int adresa)
+        {
+            Id = id;
+            Jmeno = jmeno;
+            Prijmeni = prijmeni;
+            Idadresa = adresa;
         }
         public Zakaznik(string jmeno, string prijmeni, String JmenoFirmy = "")
         {

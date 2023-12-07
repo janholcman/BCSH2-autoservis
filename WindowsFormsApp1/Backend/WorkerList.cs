@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GUI.Objects;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -10,44 +11,53 @@ namespace WindowsFormsApp1
     {
         Homepage hmpForm;
         SqlConnection conn;
-        public WorkerList(Homepage form, SqlConnection conn)
+        Zamestnanec zamestnanec;
+        public WorkerList(Homepage form, SqlConnection conn, Zamestnanec zamestnanec)
         {
+            this.zamestnanec = zamestnanec;
             this.hmpForm = form;
             InitializeComponent();
             this.conn = conn;
+
+            if (zamestnanec.Pozice == 2)
+            {
+                enumEditBtn.Visible = false;
+                addWorkerBtn.Visible = false;
+                refreshBtn.Visible = false;
+            }
         }
 
         private void userInfoBtn_Click(object sender, EventArgs e)
         {
-            Account form = new Account(hmpForm, conn);
+            Account form = new Account(hmpForm, conn, zamestnanec);
             form.Show();
             this.Close();
         }
 
         private void contractListBtn_Click(object sender, EventArgs e)
         {
-            ContractList form = new ContractList(hmpForm, conn);
+            ContractList form = new ContractList(hmpForm, conn, zamestnanec);
             form.Show();
             this.Close();
         }
 
         private void carListBtn_Click(object sender, EventArgs e)
         {
-            CarList form = new CarList(hmpForm, conn);
+            CarList form = new CarList(hmpForm, conn, zamestnanec);
             form.Show();
             this.Close();
         }
 
         private void KlientListBtn_Click(object sender, EventArgs e)
         {
-            KlientList form = new KlientList(hmpForm, conn);
+            KlientList form = new KlientList(hmpForm, conn, zamestnanec);
             form.Show();
             this.Close();
         }
 
         private void enumEditBtn_Click(object sender, EventArgs e)
         {
-            EnumEditor form = new EnumEditor(hmpForm, conn);
+            EnumEditor form = new EnumEditor(hmpForm, conn, zamestnanec);
             form.Show();
             this.Close();
         }
