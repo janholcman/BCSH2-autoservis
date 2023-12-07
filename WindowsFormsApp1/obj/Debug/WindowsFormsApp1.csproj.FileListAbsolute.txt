@@ -64,5 +64,3 @@ C:\Users\honza\Source\Repos\janholcman\autoservis\WindowsFormsApp1\bin\Debug\Sys
 C:\Users\honza\Source\Repos\janholcman\autoservis\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CopyComplete
 C:\Users\honza\Source\Repos\janholcman\autoservis\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 C:\Users\honza\Source\Repos\janholcman\autoservis\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
-C:\Users\honza\Source\Repos\janholcman\autoservis\WindowsFormsApp1\bin\Debug\Database\Database2.mdf
-C:\Users\honza\Source\Repos\janholcman\autoservis\WindowsFormsApp1\bin\Debug\Database\Database2_log.ldf
