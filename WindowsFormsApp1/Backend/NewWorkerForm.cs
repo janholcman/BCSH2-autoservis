@@ -31,9 +31,12 @@ namespace WindowsFormsApp1.Backend
 
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
-                    Pozice pozice = new Pozice(dt.Rows[i]["nazev_pozice"].ToString());
+                    if (dt.Rows[i]["nazev_pozice"].ToString() != "Zakaznik")
+                    {
+                        Pozice pozice = new Pozice(dt.Rows[i]["nazev_pozice"].ToString());
 
-                    positionCB.Items.Add(pozice);
+                        positionCB.Items.Add(pozice);
+                    }
                 }
 
                 conn.Close();
@@ -70,13 +73,14 @@ namespace WindowsFormsApp1.Backend
                 int positionId = findPositionId();
 
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("INSERT INTO zamestnanec (jmeno_zamestnanec, prijmeni_zamestnanec, rodne_cislo, datum_nastupu, hodinova_mzda, pozice_idpozice, nazev_uctu, heslo) VALUES (@jmeno_zamestnanec, @prijmeni_zamestnanec, @rodne_cislo, @datum_nastupu, @hodinova_mzda, @pozice_idpozice, @nazev_uctu, @heslo)", conn);
+                SqlCommand cmd = new SqlCommand("INSERT INTO zamestnanec (jmeno_zamestnanec, prijmeni_zamestnanec, rodne_cislo, datum_nastupu, hodinova_mzda, mzda, pozice_idpozice, nazev_uctu, heslo) VALUES (@jmeno_zamestnanec, @prijmeni_zamestnanec, @rodne_cislo, @datum_nastupu, @hodinova_mzda, @mzda, @pozice_idpozice, @nazev_uctu, @heslo)", conn);
 
                 cmd.Parameters.AddWithValue("@jmeno_zamestnanec", firstNameTF.Text);
                 cmd.Parameters.AddWithValue("@prijmeni_zamestnanec", secondNameTF.Text);
                 cmd.Parameters.AddWithValue("@rodne_cislo", birthNumberTF.Text);
                 cmd.Parameters.AddWithValue("@datum_nastupu", dateTimePicker.Value);
                 cmd.Parameters.AddWithValue("@hodinova_mzda", moneyPerHourNumpicker.Text);
+                cmd.Parameters.AddWithValue("@mzda", 0);
                 cmd.Parameters.AddWithValue("@pozice_idpozice", positionId);
                 cmd.Parameters.AddWithValue("@nazev_uctu", userNameTF.Text);
                 cmd.Parameters.AddWithValue("@heslo", userPasswordTF.Text);

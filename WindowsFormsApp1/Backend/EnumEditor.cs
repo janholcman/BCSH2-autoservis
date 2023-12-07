@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GUI.Objects;
+using System;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -8,44 +9,47 @@ namespace WindowsFormsApp1
     {
         Homepage hmpForm;
         SqlConnection conn;
-        public EnumEditor(Homepage form, SqlConnection conn)
+        Zamestnanec zamestnanec;
+        public EnumEditor(Homepage form, SqlConnection conn, Zamestnanec zamestnanec)
         {
+            this. zamestnanec = zamestnanec;
             this.hmpForm = form;
             InitializeComponent();
             this.conn = conn;
+
         }
 
         private void userInfoBtn_Click(object sender, EventArgs e)
         {
-            Account form = new Account(hmpForm, conn);
+            Account form = new Account(hmpForm, conn, zamestnanec);
             form.Show();
             this.Close();
         }
 
         private void contractListBtn_Click(object sender, EventArgs e)
         {
-            ContractList form = new ContractList(hmpForm, conn);
+            ContractList form = new ContractList(hmpForm, conn, zamestnanec);
             form.Show();
             this.Close();
         }
 
         private void carListBtn_Click(object sender, EventArgs e)
         {
-            CarList form = new CarList(hmpForm, conn);
+            CarList form = new CarList(hmpForm, conn, zamestnanec);
             form.Show();
             this.Close();
         }
 
         private void KlientListBtn_Click(object sender, EventArgs e)
         {
-            KlientList form = new KlientList(hmpForm, conn);
+            KlientList form = new KlientList(hmpForm, conn, zamestnanec);
             form.Show();
             this.Close();
         }
 
         private void workerListBtn_Click(object sender, EventArgs e)
         {
-            WorkerList form = new WorkerList(hmpForm, conn);
+            WorkerList form = new WorkerList(hmpForm, conn, zamestnanec);
             form.Show();
             this.Close();
         }
