@@ -2,7 +2,7 @@
 
 namespace GUI.Objects
 {
-    internal class Model
+    public class Model
     {
         int Id { get; set; }
         public String Nazev { get; set; }

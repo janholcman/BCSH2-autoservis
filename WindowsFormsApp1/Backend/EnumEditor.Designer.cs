@@ -38,20 +38,18 @@
             this.logoutBtn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idpojistovnaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pojistovnaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pojistovnaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.database1DataSet2 = new WindowsFormsApp1.Database1DataSet2();
-            this.pojistovnaEditBtn = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.idpoziceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nazevpoziceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.poziceBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.database1DataSet3 = new WindowsFormsApp1.Database1DataSet3();
             this.pojistovnaTableAdapter = new WindowsFormsApp1.Database1DataSet2TableAdapters.pojistovnaTableAdapter();
             this.poziceTableAdapter = new WindowsFormsApp1.Database1DataSet3TableAdapters.poziceTableAdapter();
             this.poziceEditbtn = new System.Windows.Forms.Button();
+            this.pojistovnaEditBtn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pojistovnaBindingSource)).BeginInit();
@@ -147,20 +145,12 @@
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idpojistovnaDataGridViewTextBoxColumn,
             this.pojistovnaDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.pojistovnaBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(7, 20);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(285, 326);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // idpojistovnaDataGridViewTextBoxColumn
-            // 
-            this.idpojistovnaDataGridViewTextBoxColumn.DataPropertyName = "idpojistovna";
-            this.idpojistovnaDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.idpojistovnaDataGridViewTextBoxColumn.Name = "idpojistovnaDataGridViewTextBoxColumn";
-            this.idpojistovnaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // pojistovnaDataGridViewTextBoxColumn
             // 
@@ -179,15 +169,6 @@
             this.database1DataSet2.DataSetName = "Database1DataSet2";
             this.database1DataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // pojistovnaEditBtn
-            // 
-            this.pojistovnaEditBtn.Location = new System.Drawing.Point(19, 415);
-            this.pojistovnaEditBtn.Name = "pojistovnaEditBtn";
-            this.pojistovnaEditBtn.Size = new System.Drawing.Size(163, 23);
-            this.pojistovnaEditBtn.TabIndex = 16;
-            this.pojistovnaEditBtn.Text = "Upravit číselník pojišťoven";
-            this.pojistovnaEditBtn.UseVisualStyleBackColor = true;
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dataGridView2);
@@ -203,20 +184,12 @@
             this.dataGridView2.AutoGenerateColumns = false;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idpoziceDataGridViewTextBoxColumn,
             this.nazevpoziceDataGridViewTextBoxColumn});
             this.dataGridView2.DataSource = this.poziceBindingSource;
             this.dataGridView2.Location = new System.Drawing.Point(7, 20);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(285, 326);
             this.dataGridView2.TabIndex = 0;
-            // 
-            // idpoziceDataGridViewTextBoxColumn
-            // 
-            this.idpoziceDataGridViewTextBoxColumn.DataPropertyName = "idpozice";
-            this.idpoziceDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.idpoziceDataGridViewTextBoxColumn.Name = "idpoziceDataGridViewTextBoxColumn";
-            this.idpoziceDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // nazevpoziceDataGridViewTextBoxColumn
             // 
@@ -251,6 +224,17 @@
             this.poziceEditbtn.TabIndex = 17;
             this.poziceEditbtn.Text = "Upravit číselník pozic";
             this.poziceEditbtn.UseVisualStyleBackColor = true;
+            this.poziceEditbtn.Visible = false;
+            // 
+            // pojistovnaEditBtn
+            // 
+            this.pojistovnaEditBtn.Location = new System.Drawing.Point(19, 415);
+            this.pojistovnaEditBtn.Name = "pojistovnaEditBtn";
+            this.pojistovnaEditBtn.Size = new System.Drawing.Size(163, 23);
+            this.pojistovnaEditBtn.TabIndex = 16;
+            this.pojistovnaEditBtn.Text = "Upravit číselník pojišťoven";
+            this.pojistovnaEditBtn.UseVisualStyleBackColor = true;
+            this.pojistovnaEditBtn.Visible = false;
             // 
             // EnumEditor
             // 
@@ -294,7 +278,6 @@
         private System.Windows.Forms.Button userInfoBtn;
         private System.Windows.Forms.Button logoutBtn;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button pojistovnaEditBtn;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox groupBox2;
         private Database1DataSet2 database1DataSet2;
@@ -304,10 +287,9 @@
         private Database1DataSet3 database1DataSet3;
         private System.Windows.Forms.BindingSource poziceBindingSource;
         private Database1DataSet3TableAdapters.poziceTableAdapter poziceTableAdapter;
-        private System.Windows.Forms.Button poziceEditbtn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idpojistovnaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn pojistovnaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idpoziceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nazevpoziceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button poziceEditbtn;
+        private System.Windows.Forms.Button pojistovnaEditBtn;
     }
 }

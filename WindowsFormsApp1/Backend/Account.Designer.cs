@@ -38,48 +38,38 @@
             this.enumEditBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.klientFirstNameLabel = new System.Windows.Forms.Label();
             this.klientSecondNameLabel = new System.Windows.Forms.Label();
-            this.klientIdLabel = new System.Windows.Forms.Label();
             this.klientUserNameLabel = new System.Windows.Forms.Label();
             this.klientPasswordLabel = new System.Windows.Forms.Label();
             this.klientGroupBox = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.klientCompanyLabel = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.workerGroupBox = new System.Windows.Forms.GroupBox();
+            this.showPasswordWorker = new System.Windows.Forms.PictureBox();
+            this.workerPasswordLabel = new System.Windows.Forms.Label();
+            this.birthNumberLabel = new System.Windows.Forms.Label();
+            this.workerUserNameLabel = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.startWorkLabel = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.workerMoneyLabel = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.positionLabel = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.workerIdLabel = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.workerSecondnameLabel = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.workerFirstNameLabel = new System.Windows.Forms.Label();
-            this.birthNumberLabel = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.workerPasswordLabel = new System.Windows.Forms.Label();
-            this.workerUserNameLabel = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.showPasswordKlient = new System.Windows.Forms.PictureBox();
-            this.showPasswordWorker = new System.Windows.Forms.PictureBox();
+            this.klientCompanyLabel = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.klientGroupBox.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.workerGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.showPasswordKlient)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.showPasswordWorker)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.showPasswordKlient)).BeginInit();
             this.SuspendLayout();
             // 
             // logoutBtn
@@ -170,19 +160,10 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "Příjmení";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(36, 92);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(21, 13);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "ID:";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(36, 150);
+            this.label5.Location = new System.Drawing.Point(36, 118);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(65, 13);
             this.label5.TabIndex = 11;
@@ -191,7 +172,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(36, 179);
+            this.label6.Location = new System.Drawing.Point(36, 147);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(37, 13);
             this.label6.TabIndex = 12;
@@ -219,23 +200,12 @@
             this.klientSecondNameLabel.TabIndex = 14;
             this.klientSecondNameLabel.Text = "label8";
             // 
-            // klientIdLabel
-            // 
-            this.klientIdLabel.AutoSize = true;
-            this.klientIdLabel.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.klientIdLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.klientIdLabel.Location = new System.Drawing.Point(144, 91);
-            this.klientIdLabel.Name = "klientIdLabel";
-            this.klientIdLabel.Size = new System.Drawing.Size(37, 15);
-            this.klientIdLabel.TabIndex = 15;
-            this.klientIdLabel.Text = "label9";
-            // 
             // klientUserNameLabel
             // 
             this.klientUserNameLabel.AutoSize = true;
             this.klientUserNameLabel.BackColor = System.Drawing.SystemColors.ControlLight;
             this.klientUserNameLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.klientUserNameLabel.Location = new System.Drawing.Point(144, 147);
+            this.klientUserNameLabel.Location = new System.Drawing.Point(144, 115);
             this.klientUserNameLabel.Name = "klientUserNameLabel";
             this.klientUserNameLabel.Size = new System.Drawing.Size(43, 15);
             this.klientUserNameLabel.TabIndex = 17;
@@ -246,7 +216,7 @@
             this.klientPasswordLabel.AutoSize = true;
             this.klientPasswordLabel.BackColor = System.Drawing.SystemColors.ControlLight;
             this.klientPasswordLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.klientPasswordLabel.Location = new System.Drawing.Point(144, 178);
+            this.klientPasswordLabel.Location = new System.Drawing.Point(144, 146);
             this.klientPasswordLabel.Name = "klientPasswordLabel";
             this.klientPasswordLabel.Size = new System.Drawing.Size(43, 15);
             this.klientPasswordLabel.TabIndex = 18;
@@ -262,8 +232,6 @@
             this.klientGroupBox.Controls.Add(this.klientPasswordLabel);
             this.klientGroupBox.Controls.Add(this.label2);
             this.klientGroupBox.Controls.Add(this.klientUserNameLabel);
-            this.klientGroupBox.Controls.Add(this.label3);
-            this.klientGroupBox.Controls.Add(this.klientIdLabel);
             this.klientGroupBox.Controls.Add(this.label5);
             this.klientGroupBox.Controls.Add(this.klientSecondNameLabel);
             this.klientGroupBox.Controls.Add(this.label6);
@@ -273,73 +241,6 @@
             this.klientGroupBox.Size = new System.Drawing.Size(290, 227);
             this.klientGroupBox.TabIndex = 19;
             this.klientGroupBox.TabStop = false;
-            this.klientGroupBox.Text = "Uživatelské informace";
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.Brown;
-            this.textBox1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox1.ForeColor = System.Drawing.SystemColors.MenuBar;
-            this.textBox1.Location = new System.Drawing.Point(51, 38);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 20;
-            this.textBox1.Text = "NE";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.textBox1);
-            this.groupBox2.Location = new System.Drawing.Point(354, 62);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(200, 100);
-            this.groupBox2.TabIndex = 21;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Je auto v sersiu?";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.textBox2);
-            this.groupBox3.Location = new System.Drawing.Point(354, 189);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(200, 100);
-            this.groupBox3.TabIndex = 22;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Jsou všechny zákroky uhrazeny?";
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.Color.Green;
-            this.textBox2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox2.ForeColor = System.Drawing.SystemColors.MenuBar;
-            this.textBox2.Location = new System.Drawing.Point(51, 42);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 21;
-            this.textBox2.Text = "ANO";
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // klientCompanyLabel
-            // 
-            this.klientCompanyLabel.AutoSize = true;
-            this.klientCompanyLabel.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.klientCompanyLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.klientCompanyLabel.Location = new System.Drawing.Point(144, 118);
-            this.klientCompanyLabel.Name = "klientCompanyLabel";
-            this.klientCompanyLabel.Size = new System.Drawing.Size(43, 15);
-            this.klientCompanyLabel.TabIndex = 20;
-            this.klientCompanyLabel.Text = "label12";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(36, 119);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(35, 13);
-            this.label8.TabIndex = 19;
-            this.label8.Text = "Firma:";
             // 
             // workerGroupBox
             // 
@@ -354,20 +255,89 @@
             this.workerGroupBox.Controls.Add(this.startWorkLabel);
             this.workerGroupBox.Controls.Add(this.label12);
             this.workerGroupBox.Controls.Add(this.workerMoneyLabel);
-            this.workerGroupBox.Controls.Add(this.label14);
             this.workerGroupBox.Controls.Add(this.positionLabel);
             this.workerGroupBox.Controls.Add(this.label16);
-            this.workerGroupBox.Controls.Add(this.workerIdLabel);
             this.workerGroupBox.Controls.Add(this.label18);
             this.workerGroupBox.Controls.Add(this.workerSecondnameLabel);
             this.workerGroupBox.Controls.Add(this.label20);
             this.workerGroupBox.Controls.Add(this.workerFirstNameLabel);
-            this.workerGroupBox.Location = new System.Drawing.Point(12, 62);
+            this.workerGroupBox.Location = new System.Drawing.Point(12, 52);
             this.workerGroupBox.Name = "workerGroupBox";
             this.workerGroupBox.Size = new System.Drawing.Size(290, 299);
             this.workerGroupBox.TabIndex = 21;
             this.workerGroupBox.TabStop = false;
-            this.workerGroupBox.Text = "Uživatelské informace";
+            // 
+            // showPasswordWorker
+            // 
+            this.showPasswordWorker.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.showPasswordWorker.Image = ((System.Drawing.Image)(resources.GetObject("showPasswordWorker.Image")));
+            this.showPasswordWorker.Location = new System.Drawing.Point(104, 222);
+            this.showPasswordWorker.Name = "showPasswordWorker";
+            this.showPasswordWorker.Size = new System.Drawing.Size(16, 16);
+            this.showPasswordWorker.TabIndex = 23;
+            this.showPasswordWorker.TabStop = false;
+            this.showPasswordWorker.Click += new System.EventHandler(this.showPasswordWorker_Click);
+            // 
+            // workerPasswordLabel
+            // 
+            this.workerPasswordLabel.AutoSize = true;
+            this.workerPasswordLabel.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.workerPasswordLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.workerPasswordLabel.Location = new System.Drawing.Point(144, 222);
+            this.workerPasswordLabel.Name = "workerPasswordLabel";
+            this.workerPasswordLabel.Size = new System.Drawing.Size(43, 15);
+            this.workerPasswordLabel.TabIndex = 24;
+            this.workerPasswordLabel.Text = "label12";
+            this.workerPasswordLabel.Visible = false;
+            // 
+            // birthNumberLabel
+            // 
+            this.birthNumberLabel.AutoSize = true;
+            this.birthNumberLabel.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.birthNumberLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.birthNumberLabel.Location = new System.Drawing.Point(144, 169);
+            this.birthNumberLabel.Name = "birthNumberLabel";
+            this.birthNumberLabel.Size = new System.Drawing.Size(43, 15);
+            this.birthNumberLabel.TabIndex = 20;
+            this.birthNumberLabel.Text = "label12";
+            // 
+            // workerUserNameLabel
+            // 
+            this.workerUserNameLabel.AutoSize = true;
+            this.workerUserNameLabel.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.workerUserNameLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.workerUserNameLabel.Location = new System.Drawing.Point(144, 195);
+            this.workerUserNameLabel.Name = "workerUserNameLabel";
+            this.workerUserNameLabel.Size = new System.Drawing.Size(43, 15);
+            this.workerUserNameLabel.TabIndex = 23;
+            this.workerUserNameLabel.Text = "label11";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(36, 170);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(68, 13);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "Rodné číslo:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(36, 198);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(65, 13);
+            this.label11.TabIndex = 21;
+            this.label11.Text = "Název účtu:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(36, 223);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(37, 13);
+            this.label13.TabIndex = 22;
+            this.label13.Text = "Heslo:";
             // 
             // label10
             // 
@@ -383,7 +353,7 @@
             this.startWorkLabel.AutoSize = true;
             this.startWorkLabel.BackColor = System.Drawing.SystemColors.ControlLight;
             this.startWorkLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.startWorkLabel.Location = new System.Drawing.Point(144, 175);
+            this.startWorkLabel.Location = new System.Drawing.Point(144, 142);
             this.startWorkLabel.Name = "startWorkLabel";
             this.startWorkLabel.Size = new System.Drawing.Size(43, 15);
             this.startWorkLabel.TabIndex = 18;
@@ -403,27 +373,18 @@
             this.workerMoneyLabel.AutoSize = true;
             this.workerMoneyLabel.BackColor = System.Drawing.SystemColors.ControlLight;
             this.workerMoneyLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.workerMoneyLabel.Location = new System.Drawing.Point(144, 144);
+            this.workerMoneyLabel.Location = new System.Drawing.Point(144, 111);
             this.workerMoneyLabel.Name = "workerMoneyLabel";
             this.workerMoneyLabel.Size = new System.Drawing.Size(43, 15);
             this.workerMoneyLabel.TabIndex = 17;
             this.workerMoneyLabel.Text = "label11";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(36, 92);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(21, 13);
-            this.label14.TabIndex = 9;
-            this.label14.Text = "ID:";
             // 
             // positionLabel
             // 
             this.positionLabel.AutoSize = true;
             this.positionLabel.BackColor = System.Drawing.SystemColors.ControlLight;
             this.positionLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.positionLabel.Location = new System.Drawing.Point(144, 118);
+            this.positionLabel.Location = new System.Drawing.Point(144, 85);
             this.positionLabel.Name = "positionLabel";
             this.positionLabel.Size = new System.Drawing.Size(43, 15);
             this.positionLabel.TabIndex = 16;
@@ -432,27 +393,16 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(35, 119);
+            this.label16.Location = new System.Drawing.Point(35, 86);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(42, 13);
             this.label16.TabIndex = 10;
             this.label16.Text = "Pozice:";
             // 
-            // workerIdLabel
-            // 
-            this.workerIdLabel.AutoSize = true;
-            this.workerIdLabel.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.workerIdLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.workerIdLabel.Location = new System.Drawing.Point(144, 91);
-            this.workerIdLabel.Name = "workerIdLabel";
-            this.workerIdLabel.Size = new System.Drawing.Size(37, 15);
-            this.workerIdLabel.TabIndex = 15;
-            this.workerIdLabel.Text = "label9";
-            // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(36, 147);
+            this.label18.Location = new System.Drawing.Point(36, 114);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(84, 13);
             this.label18.TabIndex = 11;
@@ -472,7 +422,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(36, 176);
+            this.label20.Location = new System.Drawing.Point(36, 143);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(82, 13);
             this.label20.TabIndex = 12;
@@ -489,88 +439,36 @@
             this.workerFirstNameLabel.TabIndex = 13;
             this.workerFirstNameLabel.Text = "label7";
             // 
-            // birthNumberLabel
-            // 
-            this.birthNumberLabel.AutoSize = true;
-            this.birthNumberLabel.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.birthNumberLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.birthNumberLabel.Location = new System.Drawing.Point(144, 202);
-            this.birthNumberLabel.Name = "birthNumberLabel";
-            this.birthNumberLabel.Size = new System.Drawing.Size(43, 15);
-            this.birthNumberLabel.TabIndex = 20;
-            this.birthNumberLabel.Text = "label12";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(36, 203);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(68, 13);
-            this.label7.TabIndex = 19;
-            this.label7.Text = "Rodné číslo:";
-            // 
-            // workerPasswordLabel
-            // 
-            this.workerPasswordLabel.AutoSize = true;
-            this.workerPasswordLabel.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.workerPasswordLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.workerPasswordLabel.Location = new System.Drawing.Point(144, 255);
-            this.workerPasswordLabel.Name = "workerPasswordLabel";
-            this.workerPasswordLabel.Size = new System.Drawing.Size(43, 15);
-            this.workerPasswordLabel.TabIndex = 24;
-            this.workerPasswordLabel.Text = "label12";
-            this.workerPasswordLabel.Visible = false;
-            // 
-            // workerUserNameLabel
-            // 
-            this.workerUserNameLabel.AutoSize = true;
-            this.workerUserNameLabel.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.workerUserNameLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.workerUserNameLabel.Location = new System.Drawing.Point(144, 228);
-            this.workerUserNameLabel.Name = "workerUserNameLabel";
-            this.workerUserNameLabel.Size = new System.Drawing.Size(43, 15);
-            this.workerUserNameLabel.TabIndex = 23;
-            this.workerUserNameLabel.Text = "label11";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(36, 231);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(65, 13);
-            this.label11.TabIndex = 21;
-            this.label11.Text = "Název účtu:";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(36, 256);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(37, 13);
-            this.label13.TabIndex = 22;
-            this.label13.Text = "Heslo:";
-            // 
             // showPasswordKlient
             // 
             this.showPasswordKlient.Cursor = System.Windows.Forms.Cursors.Hand;
             this.showPasswordKlient.Image = ((System.Drawing.Image)(resources.GetObject("showPasswordKlient.Image")));
-            this.showPasswordKlient.Location = new System.Drawing.Point(112, 178);
+            this.showPasswordKlient.Location = new System.Drawing.Point(112, 146);
             this.showPasswordKlient.Name = "showPasswordKlient";
             this.showPasswordKlient.Size = new System.Drawing.Size(16, 16);
             this.showPasswordKlient.TabIndex = 23;
             this.showPasswordKlient.TabStop = false;
             this.showPasswordKlient.Click += new System.EventHandler(this.showPasswordKlient_Click);
             // 
-            // showPasswordWorker
+            // klientCompanyLabel
             // 
-            this.showPasswordWorker.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.showPasswordWorker.Image = ((System.Drawing.Image)(resources.GetObject("showPasswordWorker.Image")));
-            this.showPasswordWorker.Location = new System.Drawing.Point(104, 255);
-            this.showPasswordWorker.Name = "showPasswordWorker";
-            this.showPasswordWorker.Size = new System.Drawing.Size(16, 16);
-            this.showPasswordWorker.TabIndex = 23;
-            this.showPasswordWorker.TabStop = false;
-            this.showPasswordWorker.Click += new System.EventHandler(this.showPasswordWorker_Click);
+            this.klientCompanyLabel.AutoSize = true;
+            this.klientCompanyLabel.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.klientCompanyLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.klientCompanyLabel.Location = new System.Drawing.Point(144, 86);
+            this.klientCompanyLabel.Name = "klientCompanyLabel";
+            this.klientCompanyLabel.Size = new System.Drawing.Size(43, 15);
+            this.klientCompanyLabel.TabIndex = 20;
+            this.klientCompanyLabel.Text = "label12";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(36, 87);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(35, 13);
+            this.label8.TabIndex = 19;
+            this.label8.Text = "Firma:";
             // 
             // Account
             // 
@@ -578,8 +476,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 373);
             this.Controls.Add(this.workerGroupBox);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.klientGroupBox);
             this.Controls.Add(this.enumEditBtn);
             this.Controls.Add(this.workerListBtn);
@@ -593,14 +489,10 @@
             this.Text = "Účet";
             this.klientGroupBox.ResumeLayout(false);
             this.klientGroupBox.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.workerGroupBox.ResumeLayout(false);
             this.workerGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.showPasswordKlient)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.showPasswordWorker)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.showPasswordKlient)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -616,19 +508,13 @@
         private System.Windows.Forms.Button enumEditBtn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label klientFirstNameLabel;
         private System.Windows.Forms.Label klientSecondNameLabel;
-        private System.Windows.Forms.Label klientIdLabel;
         private System.Windows.Forms.Label klientUserNameLabel;
         private System.Windows.Forms.Label klientPasswordLabel;
         private System.Windows.Forms.GroupBox klientGroupBox;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label klientCompanyLabel;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.GroupBox workerGroupBox;
@@ -636,10 +522,8 @@
         private System.Windows.Forms.Label startWorkLabel;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label workerMoneyLabel;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label positionLabel;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label workerIdLabel;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label workerSecondnameLabel;
         private System.Windows.Forms.Label label20;

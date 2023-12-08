@@ -2,14 +2,14 @@
 
 namespace GUI.Objects
 {
-    internal class Zakazka
+    public class Zakazka
     {
-        int Id { get; set; }
-        DateTime StartZakazka { set; get; }
-        DateTime KonecZakazka { set; get; }
-        Zamestnanec Zamestnanec { get; set; }
+        public int Id { get; set; }
+        public DateTime StartZakazka { set; get; }
+        public DateTime KonecZakazka { set; get; }
+        public int Zamestnanec { get; set; }
 
-        public Zakazka(int id, DateTime startZakazka, DateTime konecZakazka, Zamestnanec zamestnanec)
+        public Zakazka(int id, DateTime startZakazka, DateTime konecZakazka, int zamestnanec)
         {
             Id = id;
             StartZakazka = startZakazka;
@@ -17,7 +17,7 @@ namespace GUI.Objects
             Zamestnanec = zamestnanec;
         }
 
-        public Zakazka(int id, DateTime startZakazka, Zamestnanec zamestnanec)
+        public Zakazka(int id, DateTime startZakazka, int zamestnanec)
         {
             Id = id;
             StartZakazka = startZakazka;

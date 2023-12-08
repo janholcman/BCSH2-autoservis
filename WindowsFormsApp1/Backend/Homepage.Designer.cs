@@ -47,9 +47,8 @@
             this.labelPripojeno.AutoSize = true;
             this.labelPripojeno.Location = new System.Drawing.Point(13, 45);
             this.labelPripojeno.Name = "labelPripojeno";
-            this.labelPripojeno.Size = new System.Drawing.Size(23, 13);
+            this.labelPripojeno.Size = new System.Drawing.Size(0, 13);
             this.labelPripojeno.TabIndex = 1;
-            this.labelPripojeno.Text = "Nic";
             // 
             // Homepage
             // 
@@ -60,7 +59,7 @@
             this.Controls.Add(this.LoginBtn);
             this.Name = "Homepage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Homepage";
+            this.Text = " ";
             this.ResumeLayout(false);
             this.PerformLayout();
 

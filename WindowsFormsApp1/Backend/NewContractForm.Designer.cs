@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewContractForm));
             this.groupBox = new System.Windows.Forms.GroupBox();
+            this.workerTT = new System.Windows.Forms.PictureBox();
             this.cancelBtn = new System.Windows.Forms.Button();
             this.confirmBtn = new System.Windows.Forms.Button();
             this.workerCB = new System.Windows.Forms.ComboBox();
@@ -42,16 +43,19 @@
             this.addKlientBtn = new System.Windows.Forms.Button();
             this.eventLog1 = new System.Diagnostics.EventLog();
             this.klientTT = new System.Windows.Forms.PictureBox();
-            this.workerTT = new System.Windows.Forms.PictureBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.endDateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.workerTT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eventLog1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.klientTT)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.workerTT)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox
             // 
+            this.groupBox.Controls.Add(this.endDateTimePicker1);
+            this.groupBox.Controls.Add(this.label4);
             this.groupBox.Controls.Add(this.workerTT);
             this.groupBox.Controls.Add(this.cancelBtn);
             this.groupBox.Controls.Add(this.confirmBtn);
@@ -62,13 +66,24 @@
             this.groupBox.Enabled = false;
             this.groupBox.Location = new System.Drawing.Point(12, 69);
             this.groupBox.Name = "groupBox";
-            this.groupBox.Size = new System.Drawing.Size(300, 126);
+            this.groupBox.Size = new System.Drawing.Size(300, 160);
             this.groupBox.TabIndex = 0;
             this.groupBox.TabStop = false;
             // 
+            // workerTT
+            // 
+            this.workerTT.Image = ((System.Drawing.Image)(resources.GetObject("workerTT.Image")));
+            this.workerTT.Location = new System.Drawing.Point(278, 72);
+            this.workerTT.Name = "workerTT";
+            this.workerTT.Size = new System.Drawing.Size(16, 16);
+            this.workerTT.TabIndex = 19;
+            this.workerTT.TabStop = false;
+            this.toolTip1.SetToolTip(this.workerTT, "Pole nesmí být prázdné!");
+            this.workerTT.Visible = false;
+            // 
             // cancelBtn
             // 
-            this.cancelBtn.Location = new System.Drawing.Point(9, 84);
+            this.cancelBtn.Location = new System.Drawing.Point(9, 131);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(75, 23);
             this.cancelBtn.TabIndex = 7;
@@ -78,7 +93,7 @@
             // 
             // confirmBtn
             // 
-            this.confirmBtn.Location = new System.Drawing.Point(207, 84);
+            this.confirmBtn.Location = new System.Drawing.Point(219, 131);
             this.confirmBtn.Name = "confirmBtn";
             this.confirmBtn.Size = new System.Drawing.Size(75, 23);
             this.confirmBtn.TabIndex = 6;
@@ -89,7 +104,7 @@
             // workerCB
             // 
             this.workerCB.FormattingEnabled = true;
-            this.workerCB.Location = new System.Drawing.Point(87, 46);
+            this.workerCB.Location = new System.Drawing.Point(87, 72);
             this.workerCB.Name = "workerCB";
             this.workerCB.Size = new System.Drawing.Size(185, 21);
             this.workerCB.TabIndex = 5;
@@ -104,7 +119,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 46);
+            this.label3.Location = new System.Drawing.Point(6, 75);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(75, 13);
             this.label3.TabIndex = 2;
@@ -162,22 +177,27 @@
             this.toolTip1.SetToolTip(this.klientTT, "Pole nesmí být prázdné!");
             this.klientTT.Visible = false;
             // 
-            // workerTT
+            // endDateTimePicker1
             // 
-            this.workerTT.Image = ((System.Drawing.Image)(resources.GetObject("workerTT.Image")));
-            this.workerTT.Location = new System.Drawing.Point(278, 46);
-            this.workerTT.Name = "workerTT";
-            this.workerTT.Size = new System.Drawing.Size(16, 16);
-            this.workerTT.TabIndex = 19;
-            this.workerTT.TabStop = false;
-            this.toolTip1.SetToolTip(this.workerTT, "Pole nesmí být prázdné!");
-            this.workerTT.Visible = false;
+            this.endDateTimePicker1.Location = new System.Drawing.Point(87, 46);
+            this.endDateTimePicker1.Name = "endDateTimePicker1";
+            this.endDateTimePicker1.Size = new System.Drawing.Size(207, 20);
+            this.endDateTimePicker1.TabIndex = 21;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 46);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(41, 13);
+            this.label4.TabIndex = 20;
+            this.label4.Text = "Konec:";
             // 
             // NewContractForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(324, 207);
+            this.ClientSize = new System.Drawing.Size(324, 241);
             this.Controls.Add(this.klientTT);
             this.Controls.Add(this.addKlientBtn);
             this.Controls.Add(this.label2);
@@ -188,9 +208,9 @@
             this.Text = "Nová zakázka";
             this.groupBox.ResumeLayout(false);
             this.groupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.workerTT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.eventLog1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.klientTT)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.workerTT)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -212,5 +232,7 @@
         private System.Windows.Forms.PictureBox workerTT;
         private System.Windows.Forms.PictureBox klientTT;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.DateTimePicker endDateTimePicker1;
+        private System.Windows.Forms.Label label4;
     }
 }
