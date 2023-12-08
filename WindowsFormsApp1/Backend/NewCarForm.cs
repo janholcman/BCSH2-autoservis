@@ -9,6 +9,8 @@ namespace WindowsFormsApp1.Backend
     public partial class NewCarForm : Form
     {
         SqlConnection conn;
+        Automobil automobil;
+
         public NewCarForm(SqlConnection conn)
         {
             this.conn = conn;
@@ -16,6 +18,23 @@ namespace WindowsFormsApp1.Backend
             importOwnerDataIntoCombobox();
             importCarTypeDataIntoCombobox();
             importPojistovnaDataIntoCombobox();
+        }
+
+        public NewCarForm(SqlConnection conn, Automobil automobil)
+        {
+            this.conn = conn;
+            InitializeComponent();
+            importOwnerDataIntoCombobox();
+            importCarTypeDataIntoCombobox();
+            importPojistovnaDataIntoCombobox();
+            this.automobil = automobil;
+
+            vinTF.Text = automobil.Vin;
+            spzTF.Text = automobil.Spz;
+            createDateNS.Value = automobil.RokVyroby;
+            typeCB.SelectedIndex = automobil.Znacka - 4001;
+            pojistovnaCB.SelectedIndex = automobil.Pojistovna - 6001;
+            ownerCB.SelectedIndex = automobil.Majitel - 3001;
         }
 
         private void importOwnerDataIntoCombobox()

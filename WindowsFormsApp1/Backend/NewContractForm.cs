@@ -9,6 +9,7 @@ namespace WindowsFormsApp1.Backend
     public partial class NewContractForm : Form
     {
         SqlConnection conn;
+        Zakazka zakazka;
 
         public NewContractForm(SqlConnection conn)
         {
@@ -16,6 +17,19 @@ namespace WindowsFormsApp1.Backend
             InitializeComponent();
             importKlientIntoCombobox();
             importWorkerIntoCombobox();
+        }
+
+        public NewContractForm(SqlConnection conn, Zakazka zakazka)
+        {
+            this.zakazka = zakazka;
+            this.conn = conn;
+            InitializeComponent();
+            importKlientIntoCombobox();
+            importWorkerIntoCombobox();
+
+            dateTime.Value = zakazka.StartZakazka;
+            endDateTimePicker1.Value = zakazka.KonecZakazka;
+            workerCB.SelectedIndex = zakazka.Zamestnanec - 12001;
         }
 
         private void importKlientIntoCombobox()
@@ -119,7 +133,7 @@ namespace WindowsFormsApp1.Backend
                 conn.Open();
                 cmd = new SqlCommand("INSERT INTO zakaznik_zakazka (zakaznik_idzakaznik, zakazka_idzakazka) VALUES (@zakaznik_idzakaznik, @zakazka_idzakazka)", conn);
                 cmd.Parameters.AddWithValue("@zakaznik_idzakaznik", klientId);
-                cmd.Parameters.AddWithValue("@zakazka_idzakazka", workerId);
+                cmd.Parameters.AddWithValue("@zakazka_idzakazka", contractId);
                 cmd.ExecuteNonQuery();
 
                 conn.Close();
@@ -130,7 +144,6 @@ namespace WindowsFormsApp1.Backend
         private int findWorkerId()
         {
             Zamestnanec zamestnanec = workerCB.SelectedItem as Zamestnanec;
-
             conn.Open();
             SqlCommand cmd = new SqlCommand("SELECT idzamestnanec FROM zamestnanec WHERE jmeno_zamestnanec = @jmeno_zamestnanec AND prijmeni_zamestnanec = @prijmeni_zamestnanec", conn);
             cmd.Parameters.Add(new SqlParameter("@jmeno_zamestnanec", SqlDbType.VarChar));
@@ -150,12 +163,14 @@ namespace WindowsFormsApp1.Backend
 
         private int findContractId()
         {
+            int workerId = findWorkerId();
+
             conn.Open();
             SqlCommand cmd = new SqlCommand("SELECT idzakazka FROM zakazka WHERE start_zakazky = @start_zakazky AND zamestnanec_idzamestnanec = @zamestnanec_idzamestnanec", conn);
-            cmd.Parameters.Add(new SqlParameter("@start_zakazky", SqlDbType.VarChar));
-            cmd.Parameters["@start_zakazky"].Value =dateTime.Value;
+            cmd.Parameters.Add(new SqlParameter("@start_zakazky", SqlDbType.Date));
+            cmd.Parameters["@start_zakazky"].Value = dateTime.Value;
             cmd.Parameters.Add(new SqlParameter("@zamestnanec_idzamestnanec", SqlDbType.VarChar));
-            cmd.Parameters["@zamestnanec_idzamestnanec"].Value = findWorkerId();
+            cmd.Parameters["@zamestnanec_idzamestnanec"].Value = workerId;
 
             SqlDataReader reader = cmd.ExecuteReader();
 

@@ -11,12 +11,28 @@ namespace WindowsFormsApp1.Backend
     {
         SqlConnection conn;
         NewContractForm contractForm = null;
+        Zakaznik zakaznik;
 
         public NewKlientForm(SqlConnection conn)
         {
             InitializeComponent();
             this.conn = conn;
             importAdressDataIntoCombobox();
+        }
+
+        public NewKlientForm(SqlConnection conn, Zakaznik zakaznik)
+        {
+            this.zakaznik = zakaznik;
+            InitializeComponent();
+            this.conn = conn;
+            importAdressDataIntoCombobox();
+
+            firstNameTF.Text = zakaznik.Jmeno;
+            secondNameTF.Text = zakaznik.Prijmeni;
+            companyTF.Text = zakaznik.JmenoFirmy;
+            adresCB.SelectedIndex = zakaznik.Idadresa - 1001;
+            userNameTF.Text = zakaznik.NazevUctu;
+            userPasswordTF.Text = zakaznik.Heslo;
         }
 
         public NewKlientForm(SqlConnection conn, NewContractForm form)
@@ -34,8 +50,7 @@ namespace WindowsFormsApp1.Backend
                 string query = "select mesto, ulice, cislo_popisne, psc, idadresa from adresa";
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(query, conn);
-                SqlDataAdapter da = new SqlDataAdapter();
-                da.SelectCommand = cmd;
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
 

@@ -98,5 +98,54 @@ namespace WindowsFormsApp1
 
             conn.Close();
         }
+
+        private void klientGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (KlientDataGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
+            {
+                DataGridViewCell cell = KlientDataGrid.Rows[e.RowIndex].Cells[0];
+                int id = Convert.ToInt32(cell.Value);
+
+                string query = "SELECT * FROM zakaznik WHERE idzakaznik = @idzakaznik";
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(query, conn);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.SelectCommand.Parameters.AddWithValue("@idzakaznik", id);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                Zakaznik prihlasenyZakaznik = new Zakaznik(id, dt.Rows[0]["jmeno_zakaznik"].ToString(), dt.Rows[0]["prijmeni_zakaznik"].ToString(), dt.Rows[0]["jmeno_firmy"].ToString(), Convert.ToInt32(dt.Rows[0]["adresa_idadresa"]), dt.Rows[0]["nazev_uctu"].ToString(), dt.Rows[0]["heslo"].ToString());
+
+                Account form = new Account(hmpForm, conn, prihlasenyZakaznik);
+                form.Show();
+                conn.Close();
+            }
+        }
+
+        private void editBtn_Click(object sender, EventArgs e)
+        {
+            if (zamestnanec.Pozice == 1)
+            {
+                int selectedRow = KlientDataGrid.CurrentCell.RowIndex;
+                DataGridViewCell cell = KlientDataGrid.Rows[selectedRow].Cells[0];
+                int id = Convert.ToInt32(cell.Value);
+                string query = "SELECT * FROM zakaznik WHERE idzakaznik = @idzakaznik";
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(query, conn);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.SelectCommand.Parameters.AddWithValue("@idzakaznik", id);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                Zakaznik prihlasenyZakaznik = new Zakaznik(id, dt.Rows[0]["jmeno_zakaznik"].ToString(), dt.Rows[0]["prijmeni_zakaznik"].ToString(), dt.Rows[0]["jmeno_firmy"].ToString(), Convert.ToInt32(dt.Rows[0]["adresa_idadresa"]), dt.Rows[0]["nazev_uctu"].ToString(), dt.Rows[0]["heslo"].ToString());
+                conn.Close();
+                NewKlientForm form = new NewKlientForm(conn, prihlasenyZakaznik);
+                form.Show();
+            }
+            else
+            {
+                MessageBox.Show("Nemáte příslušná práva!");
+            }
+        }
     }
 }

@@ -12,6 +12,7 @@ namespace WindowsFormsApp1
         Homepage hmpForm;
         SqlConnection conn;
         Zamestnanec zamestnanec;
+
         public WorkerList(Homepage form, SqlConnection conn, Zamestnanec zamestnanec)
         {
             this.zamestnanec = zamestnanec;
@@ -99,6 +100,64 @@ namespace WindowsFormsApp1
             workerDataGrid.DataSource = dt;
 
             conn.Close();
+        }
+
+        private void workerDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (workerDataGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
+            {
+                if (zamestnanec.Pozice == 1)
+                {
+                    DataGridViewCell cell = workerDataGrid.Rows[e.RowIndex].Cells[0];
+                    int id = Convert.ToInt32(cell.Value);
+
+                    string query = "SELECT * FROM zamestnanec WHERE idzamestnanec = @idzamestnanec";
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.SelectCommand.Parameters.AddWithValue("@idzamestnanec", id);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+
+                    Zamestnanec prihlasenyZamestnanec = new Zamestnanec(id, dt.Rows[0]["jmeno_zamestnanec"].ToString(), dt.Rows[0]["prijmeni_zamestnanec"].ToString(), dt.Rows[0]["rodne_cislo"].ToString(), Convert.ToDateTime(dt.Rows[0]["datum_nastupu"]), Convert.ToInt32(dt.Rows[0]["hodinova_mzda"]), Convert.ToInt32(dt.Rows[0]["mzda"]), Convert.ToInt32(dt.Rows[0]["pozice_idpozice"]), dt.Rows[0]["nazev_uctu"].ToString(), dt.Rows[0]["heslo"].ToString());
+
+                    Account form = new Account(hmpForm, conn, prihlasenyZamestnanec);
+                    form.Show();
+                    conn.Close();
+                } else
+                {
+                    MessageBox.Show("Nemáte příslušná práva!");
+                }
+                
+            }
+        }
+
+        private void editBtn_Click(object sender, EventArgs e)
+        {
+            if (zamestnanec.Pozice == 1)
+            {
+                int selectedRow = workerDataGrid.CurrentCell.RowIndex;
+                DataGridViewCell cell = workerDataGrid.Rows[selectedRow].Cells[0];
+                int id = Convert.ToInt32(cell.Value);
+                string query = "SELECT * FROM zamestnanec WHERE idzamestnanec = @idzamestnanec";
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(query, conn);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.SelectCommand.Parameters.AddWithValue("@idzamestnanec", id);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                Zamestnanec editovanyZamestnanec = new Zamestnanec(id, dt.Rows[0]["jmeno_zamestnanec"].ToString(), dt.Rows[0]["prijmeni_zamestnanec"].ToString(), dt.Rows[0]["rodne_cislo"].ToString(), Convert.ToDateTime(dt.Rows[0]["datum_nastupu"]), Convert.ToInt32(dt.Rows[0]["hodinova_mzda"]), Convert.ToInt32(dt.Rows[0]["mzda"]), Convert.ToInt32(dt.Rows[0]["pozice_idpozice"]), dt.Rows[0]["nazev_uctu"].ToString(), dt.Rows[0]["heslo"].ToString());
+                conn.Close();
+                NewWorkerForm form = new NewWorkerForm(conn, editovanyZamestnanec);
+                form.Show();
+            }
+            else
+            {
+                MessageBox.Show("Nemáte příslušná práva!");
+            }
+
+
         }
     }
 }

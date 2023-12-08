@@ -9,12 +9,37 @@ namespace WindowsFormsApp1.Backend
     public partial class NewWorkerForm : Form
     {
         SqlConnection conn;
+        Zamestnanec Zamestnanec;
 
         public NewWorkerForm(SqlConnection conn)
         {
             this.conn = conn;
             InitializeComponent();
             importPositionDataIntoCombobox();
+        }
+
+        public NewWorkerForm(SqlConnection conn, Zamestnanec zamestnanec)
+        {
+            this.Zamestnanec = zamestnanec;
+            this.conn = conn;
+            InitializeComponent();
+            importPositionDataIntoCombobox();
+
+            firstNameTF.Text = zamestnanec.Jmeno;
+            secondNameTF.Text = zamestnanec.Prijmeni;
+            birthNumberTF.Text = zamestnanec.RodneCislo;
+            dateTimePicker.Value = zamestnanec.DatumNastupu;
+            moneyPerHourNumpicker.Value = Convert.ToDecimal(zamestnanec.HodinovaMzda);
+            if (zamestnanec.Pozice == 1)
+            {
+                positionCB.SelectedIndex = 0;
+            }
+            else
+            {
+                positionCB.SelectedValue = 1;
+            }
+            userNameTF.Text = zamestnanec.UserName;
+            userPasswordTF.Text = zamestnanec.Password;
         }
 
         private void importPositionDataIntoCombobox()

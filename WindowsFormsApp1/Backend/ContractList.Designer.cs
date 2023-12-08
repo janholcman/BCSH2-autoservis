@@ -37,16 +37,16 @@
             this.userInfoBtn = new System.Windows.Forms.Button();
             this.logoutBtn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.editBtn = new System.Windows.Forms.Button();
             this.resetBtn = new System.Windows.Forms.Button();
             this.addContractBtn = new System.Windows.Forms.Button();
             this.contractDataGrid = new System.Windows.Forms.DataGridView();
-            this.idzakazkaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.startzakazkyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.koneczakazkyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.zamestnanecidzamestnanecDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.zakazkaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.database1DataSet1 = new WindowsFormsApp1.Database1DataSet1();
             this.zakazkaTableAdapter = new WindowsFormsApp1.Database1DataSet1TableAdapters.zakazkaTableAdapter();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.startzakazkyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.koneczakazkyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.contractDataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.zakazkaBindingSource)).BeginInit();
@@ -125,6 +125,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.editBtn);
             this.groupBox1.Controls.Add(this.resetBtn);
             this.groupBox1.Controls.Add(this.addContractBtn);
             this.groupBox1.Controls.Add(this.contractDataGrid);
@@ -134,6 +135,16 @@
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Seznam zakázek";
+            // 
+            // editBtn
+            // 
+            this.editBtn.Location = new System.Drawing.Point(625, 79);
+            this.editBtn.Name = "editBtn";
+            this.editBtn.Size = new System.Drawing.Size(144, 23);
+            this.editBtn.TabIndex = 15;
+            this.editBtn.Text = "Upravit položku";
+            this.editBtn.UseVisualStyleBackColor = true;
+            this.editBtn.Click += new System.EventHandler(this.editBtn_Click);
             // 
             // resetBtn
             // 
@@ -160,43 +171,14 @@
             this.contractDataGrid.AutoGenerateColumns = false;
             this.contractDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.contractDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idzakazkaDataGridViewTextBoxColumn,
+            this.ID,
             this.startzakazkyDataGridViewTextBoxColumn,
-            this.koneczakazkyDataGridViewTextBoxColumn,
-            this.zamestnanecidzamestnanecDataGridViewTextBoxColumn});
+            this.koneczakazkyDataGridViewTextBoxColumn});
             this.contractDataGrid.DataSource = this.zakazkaBindingSource;
             this.contractDataGrid.Location = new System.Drawing.Point(7, 19);
             this.contractDataGrid.Name = "contractDataGrid";
             this.contractDataGrid.Size = new System.Drawing.Size(611, 370);
             this.contractDataGrid.TabIndex = 0;
-            // 
-            // idzakazkaDataGridViewTextBoxColumn
-            // 
-            this.idzakazkaDataGridViewTextBoxColumn.DataPropertyName = "idzakazka";
-            this.idzakazkaDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.idzakazkaDataGridViewTextBoxColumn.Name = "idzakazkaDataGridViewTextBoxColumn";
-            this.idzakazkaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // startzakazkyDataGridViewTextBoxColumn
-            // 
-            this.startzakazkyDataGridViewTextBoxColumn.DataPropertyName = "start_zakazky";
-            this.startzakazkyDataGridViewTextBoxColumn.HeaderText = "Start zakázky";
-            this.startzakazkyDataGridViewTextBoxColumn.Name = "startzakazkyDataGridViewTextBoxColumn";
-            this.startzakazkyDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // koneczakazkyDataGridViewTextBoxColumn
-            // 
-            this.koneczakazkyDataGridViewTextBoxColumn.DataPropertyName = "konec_zakazky";
-            this.koneczakazkyDataGridViewTextBoxColumn.HeaderText = "Konec zakázky";
-            this.koneczakazkyDataGridViewTextBoxColumn.Name = "koneczakazkyDataGridViewTextBoxColumn";
-            this.koneczakazkyDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // zamestnanecidzamestnanecDataGridViewTextBoxColumn
-            // 
-            this.zamestnanecidzamestnanecDataGridViewTextBoxColumn.DataPropertyName = "zamestnanec_idzamestnanec";
-            this.zamestnanecidzamestnanecDataGridViewTextBoxColumn.HeaderText = "ID zaměstnance";
-            this.zamestnanecidzamestnanecDataGridViewTextBoxColumn.Name = "zamestnanecidzamestnanecDataGridViewTextBoxColumn";
-            this.zamestnanecidzamestnanecDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // zakazkaBindingSource
             // 
@@ -211,6 +193,28 @@
             // zakazkaTableAdapter
             // 
             this.zakazkaTableAdapter.ClearBeforeFill = true;
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "idzakazka";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            // 
+            // startzakazkyDataGridViewTextBoxColumn
+            // 
+            this.startzakazkyDataGridViewTextBoxColumn.DataPropertyName = "start_zakazky";
+            this.startzakazkyDataGridViewTextBoxColumn.HeaderText = "Start zakázky";
+            this.startzakazkyDataGridViewTextBoxColumn.Name = "startzakazkyDataGridViewTextBoxColumn";
+            this.startzakazkyDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // koneczakazkyDataGridViewTextBoxColumn
+            // 
+            this.koneczakazkyDataGridViewTextBoxColumn.DataPropertyName = "konec_zakazky";
+            this.koneczakazkyDataGridViewTextBoxColumn.HeaderText = "Konec zakázky";
+            this.koneczakazkyDataGridViewTextBoxColumn.Name = "koneczakazkyDataGridViewTextBoxColumn";
+            this.koneczakazkyDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // ContractList
             // 
@@ -251,11 +255,11 @@
         private Database1DataSet1 database1DataSet1;
         private System.Windows.Forms.BindingSource zakazkaBindingSource;
         private Database1DataSet1TableAdapters.zakazkaTableAdapter zakazkaTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idzakazkaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn startzakazkyDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn koneczakazkyDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn zamestnanecidzamestnanecDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button addContractBtn;
         private System.Windows.Forms.Button resetBtn;
+        private System.Windows.Forms.Button editBtn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn startzakazkyDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn koneczakazkyDataGridViewTextBoxColumn;
     }
 }

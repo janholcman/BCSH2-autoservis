@@ -2,18 +2,18 @@
 
 namespace GUI.Objects
 {
-    internal class Automobil
+    public  class Automobil
     {
 
-        int Id { get; set; }
-        String Vin { get; set; }
-        String Spz { get; set; }
-        int RokVyroby { get; set; }
-        Model Znacka { get; set; }
-        Pojistovna Pojistovna { get; set; }
-        Majitel Majitel { get; set; }
+        public int Id { get; set; }
+        public String Vin { get; set; }
+        public String Spz { get; set; }
+        public int RokVyroby { get; set; }
+        public int Znacka { get; set; }
+        public int Pojistovna { get; set; }
+        public int Majitel { get; set; }
 
-        public Automobil(int id, string vin, string spz, int rokVyroby, Model znacka, Pojistovna pojistovna, Majitel majitel)
+        public Automobil(int id, string vin, string spz, int rokVyroby, int znacka, int pojistovna, int majitel)
         {
             Id = id;
             Vin = vin;

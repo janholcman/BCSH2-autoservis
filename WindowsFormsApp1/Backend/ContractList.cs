@@ -122,16 +122,53 @@ namespace WindowsFormsApp1
 
         private void loaddata()
         {
-            conn.Open();
+            //if (idPozice == 3)
+            //{
+            //    SqlCommand query = new SqlCommand("SELECT * FROM zakaznik_zakazka WHERE idMajitele = @idMajitele", conn);
 
-            string query = "SELECT * FROM zakazka WHERE";
-            SqlCommand cmd = new SqlCommand(query, conn);
-            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            adapter.Fill(dt);
-            contractDataGrid.DataSource = dt;
+            //    SqlCommand query2 = new SqlCommand("SELECT * FROM zakazka WHERE idMajitele = @idMajitele", conn);
+            //} else
+            //{
 
-            conn.Close();
+                conn.Open();
+                string query = "SELECT * FROM zakazka";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                contractDataGrid.DataSource = dt;
+
+                conn.Close();
+            //}
+
+            
+        }
+
+        private void editBtn_Click(object sender, EventArgs e)
+        {
+            if (zamestnanec.Pozice == 1)
+            {
+                int selectedRow = contractDataGrid.CurrentCell.RowIndex;
+                DataGridViewCell cell = contractDataGrid.Rows[selectedRow].Cells[0];
+                int id = Convert.ToInt32(cell.Value);
+                string query = "SELECT * FROM zakazka WHERE idzakazka = @idzakazka";
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(query, conn);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.SelectCommand.Parameters.AddWithValue("@idzakazka", id);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                Zakazka zakazka = new Zakazka(id, Convert.ToDateTime(dt.Rows[0]["start_zakazky"].ToString()), Convert.ToDateTime(dt.Rows[0]["konec_zakazky"].ToString()), Convert.ToInt32(dt.Rows[0]["zamestnanec_idzamestnanec"].ToString()));
+
+                conn.Close();
+                NewContractForm form = new NewContractForm(conn, zakazka);
+                form.Show();
+            }
+            else
+            {
+                MessageBox.Show("Nemáte příslušná práva!");
+            }
         }
     }
 }

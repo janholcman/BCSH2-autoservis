@@ -36,6 +36,7 @@ namespace WindowsFormsApp1
             this.conn = conn;
 
             this.idPozice = 3;
+            loaddata();
             KlientListBtn.Visible = false;
             workerListBtn.Visible = false;
             enumEditBtn.Visible = false;
@@ -123,58 +124,77 @@ namespace WindowsFormsApp1
         private void loaddata()
         {
             conn.Open();
-            //if (idPozice == 3) 
-            //{
-            //    SqlCommand cmd = new SqlCommand("SELECT idmajitel FROM majitel WHERE jmeno_majitele = @jmeno_majitele AND prijmeni_majitele = @prijmeni_majitele", conn);
-            //    cmd.Parameters.Add(new SqlParameter("@jmeno_majitele", SqlDbType.VarChar));
-            //    cmd.Parameters["@jmeno_majitele"].Value = zakaznik.Jmeno;
-            //    cmd.Parameters.Add(new SqlParameter("@prijmeni_majitele", SqlDbType.VarChar));
-            //    cmd.Parameters["@prijmeni_majitele"].Value = zakaznik.Prijmeni;
-            //    SqlDataReader reader = cmd.ExecuteReader();
-            //    reader.Read();
+            if (idPozice == 3)
+            {
+                carListDataGrid.DataSource = null;
 
-            //    if (reader.HasRows)
-            //    {
-            //        int idMajitel = reader.GetInt32(0);
-            //        reader.Close();
+                SqlCommand cmd = new SqlCommand("SELECT idmajitel FROM majitel WHERE jmeno_majitele = @jmeno_majitele AND prijmeni_majitele = @prijmeni_majitele", conn);
+                cmd.Parameters.Add(new SqlParameter("@jmeno_majitele", SqlDbType.VarChar));
+                cmd.Parameters["@jmeno_majitele"].Value = zakaznik.Jmeno;
+                cmd.Parameters.Add(new SqlParameter("@prijmeni_majitele", SqlDbType.VarChar));
+                cmd.Parameters["@prijmeni_majitele"].Value = zakaznik.Prijmeni;
+                SqlDataReader reader = cmd.ExecuteReader();
+                reader.Read();
 
-            //        cmd = new SqlCommand("SELECT * FROM automobil WHERE majitel_idmajitel = @majitel_idmajitel",conn);
-            //        cmd.Parameters.Add(new SqlParameter("@majitel_idmajitel", SqlDbType.VarChar));
-            //        cmd.Parameters["@majitel_idmajitel"].Value = idMajitel;
+                if (reader.HasRows)
+                {
+                    int idMajitel = reader.GetInt32(0);
+                    reader.Close();
 
-            //        reader = cmd.ExecuteReader();
+                    string query = "SELECT * FROM automobil WHERE majitel_idmajitel = @majitel_idmajitel";
+                    cmd = new SqlCommand(query, conn);
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.SelectCommand.Parameters.AddWithValue("@majitel_idmajitel", idMajitel);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    carListDataGrid.DataSource = dt;
+                }
+            }
+            else
+            {
+                string query = "SELECT * FROM automobil";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                carListDataGrid.DataSource = dt;
+            }
 
-            //        reader.Read();
+            //string query = "SELECT * FROM automobil";
+            //SqlCommand cmd = new SqlCommand(query, conn);
+            //SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            //DataTable dt = new DataTable();
+            //adapter.Fill(dt);
+            //carListDataGrid.DataSource = dt;
 
-            //        for (int i = 0; i < reader.FieldCount; i++)
-            //        {
-
-            //        }
-
-            //        SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-            //        DataTable dt = new DataTable();
-            //        adapter.Fill(dt);
-            //        carListDataGrid.DataSource = dt;
-            //    }
-
-                    
-            //}else
-            //{
-            //    string query = "SELECT * FROM automobil";
-            //    SqlCommand cmd = new SqlCommand(query, conn);
-            //    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-            //    DataTable dt = new DataTable();
-            //    adapter.Fill(dt);
-            //    carListDataGrid.DataSource = dt;
-            //}
-
-            string query = "SELECT * FROM automobil";
-            SqlCommand cmd = new SqlCommand(query, conn);
-            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            adapter.Fill(dt);
-            carListDataGrid.DataSource = dt;
             conn.Close();
+        }
+
+        private void editBtn_Click(object sender, EventArgs e)
+        {
+            if (zamestnanec.Pozice == 1)
+            {
+                int selectedRow = carListDataGrid.CurrentCell.RowIndex;
+                DataGridViewCell cell = carListDataGrid.Rows[selectedRow].Cells[0];
+                int id = Convert.ToInt32(cell.Value);
+                string query = "SELECT * FROM automobil WHERE idautomobil = @idautomobil";
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(query, conn);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.SelectCommand.Parameters.AddWithValue("@idautomobil", id);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                Automobil automobil = new Automobil(id, dt.Rows[0]["vin"].ToString(), dt.Rows[0]["spz"].ToString(), Convert.ToInt32(dt.Rows[0]["rok_vyroby"]), Convert.ToInt32(dt.Rows[0]["modely_idmodel"]), Convert.ToInt32(dt.Rows[0]["pojistovna_idpojistovna"]), Convert.ToInt32( dt.Rows[0]["majitel_idmajitel"].ToString()));
+
+                conn.Close();
+                NewCarForm form = new NewCarForm(conn, automobil);
+                form.Show();
+            }
+            else
+            {
+                MessageBox.Show("Nemáte příslušná práva!");
+            }
         }
     }
 }

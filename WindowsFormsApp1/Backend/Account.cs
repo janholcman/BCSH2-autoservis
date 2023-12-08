@@ -26,10 +26,10 @@ namespace WindowsFormsApp1
             enumEditBtn.Visible = false;
 
             workerGroupBox.Visible = false;
+            klientGroupBox.Visible = true;
 
             klientFirstNameLabel.Text = zakaznik.Jmeno;
             klientSecondNameLabel.Text = zakaznik.Prijmeni;
-            klientIdLabel.Text = zakaznik.Id.ToString();
             klientCompanyLabel.Text = zakaznik.JmenoFirmy;
             klientUserNameLabel.Text = zakaznik.NazevUctu;
             klientPasswordLabel.Text = zakaznik.Heslo;
@@ -45,10 +45,10 @@ namespace WindowsFormsApp1
             this.idPozice = zamestnanec.Pozice;
 
             klientGroupBox.Visible = false;
+            workerGroupBox.Visible = true;
 
             workerFirstNameLabel.Text = zamestnanec.Jmeno;
             workerSecondnameLabel.Text = zamestnanec.Prijmeni;
-            workerIdLabel.Text = zamestnanec.Id.ToString();
 
             if (this.idPozice == 1)
             {
